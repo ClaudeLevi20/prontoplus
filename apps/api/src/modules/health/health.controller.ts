@@ -50,7 +50,7 @@ export class HealthController {
   @HealthCheck()
   checkDatabase() {
     return this.health.check([
-      () => this.prismaHealth.pingCheck('database', this.prisma),
+      () => this.prismaHealth.pingCheck('database', this.prisma as any),
     ]);
   }
 
@@ -79,7 +79,7 @@ export class HealthController {
       () => this.memory.checkHeap('memory_heap', 150 * 1024 * 1024),
       () => this.memory.checkRSS('memory_rss', 150 * 1024 * 1024),
       () => this.disk.checkStorage('storage', { path: '/', thresholdPercent: 0.9 }),
-      () => this.prismaHealth.pingCheck('database', this.prisma),
+      () => this.prismaHealth.pingCheck('database', this.prisma as any),
     ]);
   }
 }
