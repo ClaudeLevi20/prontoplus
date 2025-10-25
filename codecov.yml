@@ -1,0 +1,58 @@
+coverage:
+  status:
+    project:
+      default:
+        target: 80%
+        threshold: 5%
+    patch:
+      default:
+        target: 80%
+        threshold: 5%
+
+comment:
+  layout: "header,diff,files,footer"
+  behavior: default
+  require_changes: false
+  require_base: no
+  require_head: yes
+
+github_checks:
+  annotations: true
+
+ignore:
+  - "node_modules/"
+  - "dist/"
+  - "build/"
+  - ".next/"
+  - "coverage/"
+  - "**/*.d.ts"
+  - "**/*.test.ts"
+  - "**/*.test.tsx"
+  - "**/*.spec.ts"
+  - "**/*.spec.tsx"
+  - "**/test/**"
+  - "**/tests/**"
+  - "**/__tests__/**"
+  - "**/jest.config.*"
+  - "**/jest.setup.*"
+  - "**/turbo.json"
+  - "**/package.json"
+  - "**/pnpm-lock.yaml"
+  - "**/tsconfig*.json"
+  - "**/.eslintrc*"
+  - "**/.prettierrc*"
+  - "**/tailwind.config.*"
+  - "**/next.config.*"
+  - "**/postcss.config.*"
+  - "**/prisma/schema.prisma"
+  - "**/env.example"
+  - "**/.env*"
+  - "**/README.md"
+  - "**/docs/**"
+  - "**/.github/**"
+  - "**/railway.*"
+  - "**/.lighthouserc.json"
+  - "**/codecov.yml"
+
+codecov:
+  require_ci_to_pass: yes

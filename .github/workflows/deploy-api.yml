@@ -1,0 +1,111 @@
+name: Deploy API
+
+on:
+  push:
+    branches: ['main']
+    paths: ['apps/api/**', 'packages/**', 'pnpm-lock.yaml', 'package.json', 'turbo.json']
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy API to Railway
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build API
+        run: pnpm build --filter=api
+
+      - name: Install Railway CLI
+        run: |
+          curl -fsSL https://railway.app/install.sh | sh
+          echo "$HOME/.railway/bin" >> $GITHUB_PATH
+
+      - name: Login to Railway
+        run: railway login --token ${{ secrets.RAILWAY_TOKEN }}
+
+      - name: Deploy to Railway
+        run: |
+          railway link ${{ secrets.RAILWAY_API_PROJECT_ID }}
+          railway up --service api
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
+      - name: Wait for deployment
+        run: sleep 30
+
+      - name: Get deployment URL
+        id: get-url
+        run: |
+          URL=$(railway status --json | jq -r '.deployments[0].url')
+          echo "url=$URL" >> $GITHUB_OUTPUT
+          echo "Deployment URL: $URL"
+
+      - name: Run smoke tests
+        run: |
+          API_URL="${{ steps.get-url.outputs.url }}"
+          
+          # Test health endpoint
+          echo "Testing health endpoint..."
+          curl -f "$API_URL/health" || exit 1
+          
+          # Test API docs endpoint
+          echo "Testing API docs..."
+          curl -f "$API_URL/api/docs" || exit 1
+          
+          # Test API root
+          echo "Testing API root..."
+          curl -f "$API_URL" || exit 1
+          
+          echo "✅ All smoke tests passed!"
+
+      - name: Comment deployment status
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `## 🚀 API Deployment Successful
+            
+            **Deployment URL:** ${{ steps.get-url.outputs.url }}
+            
+            **Status:** ✅ Deployed and healthy
+            **Health Check:** ${{ steps.get-url.outputs.url }}/health
+            **API Docs:** ${{ steps.get-url.outputs.url }}/api/docs
+            
+            [View deployment logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: body
+            });
+
+      - name: Set deployment status
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.repos.createDeploymentStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              deployment_id: context.payload.deployment?.id || 0,
+              state: 'success',
+              environment_url: '${{ steps.get-url.outputs.url }}',
+              description: 'API deployed successfully to Railway'
+            });
