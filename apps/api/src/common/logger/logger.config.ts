@@ -1,5 +1,5 @@
 import * as winston from 'winston';
-import * as DailyRotateFile from 'winston-daily-rotate-file';
+import DailyRotateFile from 'winston-daily-rotate-file';
 import * as path from 'path';
 import * as fs from 'fs';
 
@@ -46,7 +46,7 @@ export const loggerConfig = {
 if (process.env.NODE_ENV === 'production') {
   (loggerConfig.transports as winston.transport[]).push(
     // Error log file with daily rotation
-    new (DailyRotateFile as any)({
+    new DailyRotateFile({
       filename: path.join(logDir, 'error-%DATE%.log'),
       datePattern: 'YYYY-MM-DD',
       level: 'error',
@@ -60,7 +60,7 @@ if (process.env.NODE_ENV === 'production') {
       ),
     }),
     // Combined log file with daily rotation
-    new (DailyRotateFile as any)({
+    new DailyRotateFile({
       filename: path.join(logDir, 'combined-%DATE%.log'),
       datePattern: 'YYYY-MM-DD',
       maxSize: '20m',
