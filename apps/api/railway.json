@@ -1,7 +1,20 @@
 {
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "cd apps/api && pnpm prisma:generate && pnpm build"
+    "nixpacksPhase": {
+      "setup": {
+        "nixPkgs": ["nodejs_20", "pnpm"]
+      },
+      "install": {
+        "cmds": ["pnpm install --frozen-lockfile"]
+      },
+      "build": {
+        "cmds": [
+          "cd apps/api && pnpm exec prisma generate",
+          "pnpm turbo run build --filter=api"
+        ]
+      }
+    }
   },
   "deploy": {
     "startCommand": "cd apps/api && pnpm start:prod",
