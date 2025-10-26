@@ -1,17 +1,7 @@
 {
   "build": {
     "builder": "NIXPACKS",
-    "nixpacksPhase": {
-      "setup": {
-        "nixPkgs": ["nodejs_20", "pnpm"]
-      },
-      "install": {
-        "cmds": ["pnpm install --frozen-lockfile"]
-      },
-      "build": {
-        "cmds": ["pnpm turbo run build --filter=api"]
-      }
-    }
+    "buildCommand": "./build.sh"
   },
   "deploy": {
     "startCommand": "cd apps/api && pnpm start:prod",
