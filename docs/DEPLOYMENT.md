@@ -12,6 +12,65 @@ The ProntoPlus application uses a modern CI/CD pipeline with:
 - **Lighthouse CI** for performance monitoring
 - **Codecov** for coverage reporting
 
+## Railway Deployment
+
+### Prisma Build Configuration
+
+The API uses npm lifecycle hooks to ensure Prisma client generation happens at the correct time during the build process:
+
+- **postinstall**: Generates Prisma client after `pnpm install`
+- **prebuild**: Generates Prisma client before TypeScript compilation
+
+This ensures that:
+1. The Prisma client is generated after dependencies are installed
+2. TypeScript compilation has access to the generated client
+3. The build process works correctly on Railway and other platforms
+
+### Railway Environment Variables
+
+Ensure these environment variables are set in your Railway project:
+
+```bash
+DATABASE_URL=postgresql://username:password@hostname:5432/database
+NODE_ENV=production
+PORT=4000
+LOG_LEVEL=info
+REDIS_URL=redis://hostname:6379  # Optional
+CONFIGCAT_SDK_KEY=your_key  # Optional
+```
+
+### Build Process
+
+The Railway build process follows these steps:
+
+1. **Install dependencies**: `pnpm install --frozen-lockfile`
+   - This triggers `postinstall` hook which runs `prisma generate`
+
+2. **Build application**: `pnpm turbo run build --filter=api`
+   - This triggers `prebuild` hook which runs `prisma generate` again (for safety)
+   - Then runs `nest build` to compile TypeScript
+
+3. **Start application**: `cd apps/api && pnpm start:prod`
+
+### Troubleshooting
+
+**Issue**: "Cannot find module '@prisma/client'"
+
+**Solution**: Ensure `postinstall` and `prebuild` scripts are present in `apps/api/package.json`:
+```json
+{
+  "scripts": {
+    "postinstall": "prisma generate",
+    "prebuild": "prisma generate",
+    "build": "nest build"
+  }
+}
+```
+
+**Issue**: TypeScript compilation errors for Prisma types
+
+**Solution**: Check that `prisma` is in `devDependencies` in `apps/api/package.json` and that the DATABASE_URL environment variable is set during the build phase.
+
 ## Railway Setup
 
 ### 1. Create Railway Projects

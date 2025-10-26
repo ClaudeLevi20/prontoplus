@@ -5,10 +5,7 @@ nixPkgs = ["nodejs_20", "pnpm"]
 cmds = ["pnpm install --frozen-lockfile"]
 
 [phases.build]
-cmds = [
-  "cd apps/api && pnpm exec prisma generate",
-  "pnpm turbo run build --filter=api"
-]
+cmds = ["pnpm turbo run build --filter=api"]
 
 [start]
 cmd = "cd apps/api && pnpm start:prod"
