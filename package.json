@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "start": "cd apps/api && pnpm start:prod",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "type-check": "turbo type-check",
