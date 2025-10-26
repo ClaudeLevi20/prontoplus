@@ -15,8 +15,24 @@ async function bootstrap() {
   const logger = new Logger('Bootstrap');
 
   // Enable CORS
+  const allowedOrigins = [
+    process.env.FRONTEND_URL,
+    'http://localhost:3000',
+    'https://frontend-production-3177.up.railway.app',
+  ].filter(Boolean);
+  
   app.enableCors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: (origin, callback) => {
+      // Allow requests with no origin (like mobile apps, curl, postman)
+      if (!origin) return callback(null, true);
+      
+      // Check if origin is allowed or matches Railway pattern
+      if (allowedOrigins.includes(origin) || origin.includes('.railway.app')) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true,
   });
 
