@@ -2,8 +2,11 @@
   "build": {
     "builder": "NIXPACKS",
     "nixpacksPhase": {
-      "prebuild": {
-        "cmds": ["pnpm install"]
+      "setup": {
+        "nixPkgs": ["nodejs_20", "pnpm"]
+      },
+      "install": {
+        "cmds": ["pnpm install --frozen-lockfile"]
       },
       "build": {
         "cmds": ["pnpm turbo run build --filter=frontend"]
