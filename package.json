@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
-    "start": "cd apps/api && pnpm start:prod",
+    "start": "node -e \"process.env.RAILWAY_SERVICE_NAME === 'frontend' ? require('child_process').execSync('cd apps/frontend && pnpm start', {stdio: 'inherit'}) : require('child_process').execSync('cd apps/api && pnpm start:prod', {stdio: 'inherit'})\"",
+    "start:api": "cd apps/api && pnpm start:prod",
+    "start:frontend": "cd apps/frontend && pnpm start",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "type-check": "turbo type-check",
