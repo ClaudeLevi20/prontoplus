@@ -1,8 +1,7 @@
 'use client';
 
-import { useFeatureFlag } from '@/hooks/useFeatureFlag';
 import { FeatureFlags } from '@prontoplus/feature-flags';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, Badge, Skeleton } from '@prontoplus/ui';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, Badge } from '@prontoplus/ui';
 import { Sparkles, CheckCircle2 } from 'lucide-react';
 
 export function DemoSection() {
