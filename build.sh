@@ -2,14 +2,14 @@
 set -e
 
 echo "📦 Installing dependencies..."
-pnpm install --frozen-lockfile
+# Dependencies already installed by nixpacks
 
 echo "🔧 Generating Prisma Client for API..."
 cd apps/api
-pnpm exec prisma generate
+npx prisma generate
 cd ../..
 
 echo "🏗️  Building all packages..."
-pnpm turbo build
+npx turbo build
 
 echo "✅ Build complete!"
