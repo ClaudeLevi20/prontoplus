@@ -2,7 +2,7 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "echo 'Please use service-specific railway.json files'"
+"startCommand": "cd apps/api && pnpm start:prod"
 healthcheckPath = "/health"
 healthcheckTimeout = 300
 restartPolicyType = "ON_FAILURE"
