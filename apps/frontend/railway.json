@@ -1,7 +1,14 @@
 {
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "cd apps/frontend && pnpm build"
+    "nixpacksPhase": {
+      "prebuild": {
+        "cmds": ["pnpm install"]
+      },
+      "build": {
+        "cmds": ["pnpm turbo run build --filter=frontend"]
+      }
+    }
   },
   "deploy": {
     "startCommand": "cd apps/frontend && pnpm start",
