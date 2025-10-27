@@ -43,8 +43,127 @@ model Practice {
   @@index([email])
 }
 
+model Call {
+  id String @id @default(cuid())
+  phoneNumber String?
+  callerName String?
+  callDuration Int // seconds
+  recordingUrl String?
+  transcriptUrl String?
+  status CallStatus @default(INITIATED)
+  telnyxCallId String @unique
+  telnyxCallControlId String?
+  direction CallDirection @default(INBOUND)
+  startedAt DateTime @default(now())
+  answeredAt DateTime?
+  endedAt DateTime?
+  metadata Json? // store raw Telnyx event data
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relation
+  demoLead DemoLead?
+  
+  @@map("calls")
+  @@index([telnyxCallId])
+  @@index([status])
+  @@index([startedAt])
+}
+
+model DemoLead {
+  id String @id @default(cuid())
+  callId String @unique
+  callerPhone String?
+  email String?
+  name String?
+  practiceName String?
+  interestLevel LeadInterest?
+  notes String?
+  captured Boolean @default(false)
+  capturedAt DateTime?
+  followUpSent Boolean @default(false)
+  
+  // Lead Scoring (add these)
+  leadScore         Int      @default(0) // 0-100
+  leadQuality       String?  // HOT, WARM, COLD (maps to interestLevel)
+  qualificationNotes String? @db.Text
+  
+  // Engagement Metrics
+  questionsAsked    String[] @default([]) // Array of topics
+  sentimentScore    Float?   // 0-1
+  mentionedPricing  Boolean  @default(false)
+  mentionedInsurance Boolean @default(false)
+  mentionedScheduling Boolean @default(false)
+  
+  // Follow-up tracking (add to existing)
+  contacted         Boolean  @default(false)
+  contactedAt       DateTime?
+  followUpDate      DateTime?
+  convertedToCustomer Boolean @default(false)
+  conversionDate    DateTime?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  call Call @relation(fields: [callId], references: [id], onDelete: Cascade)
+  notifications     NotificationLog[]
+  
+  @@map("demo_leads")
+  @@index([callId])
+  @@index([captured])
+  @@index([createdAt])
+  @@index([leadScore])
+  @@index([leadQuality])
+}
+
 enum UserRole {
   USER
   ADMIN
   SUPER_ADMIN
+}
+
+enum CallStatus {
+  INITIATED
+  RINGING
+  ANSWERED
+  COMPLETED
+  FAILED
+  BUSY
+  NO_ANSWER
+}
+
+enum CallDirection {
+  INBOUND
+  OUTBOUND
+}
+
+model NotificationLog {
+  id              String   @id @default(cuid())
+  leadId          String
+  lead            DemoLead @relation(fields: [leadId], references: [id])
+  
+  type            String   // slack, email, sms
+  channel         String   // channel identifier
+  recipient       String   // recipient name/channel
+  message         String   @db.Text
+  status          String   // sent, failed, pending
+  
+  sentAt          DateTime @default(now())
+  deliveredAt     DateTime?
+  errorMessage    String?
+  
+  createdAt       DateTime @default(now())
+  
+  @@map("notification_logs")
+  @@index([leadId])
+  @@index([status])
+  @@index([sentAt])
+}
+
+enum LeadInterest {
+  HOT
+  WARM
+  COLD
+  UNQUALIFIED
 }

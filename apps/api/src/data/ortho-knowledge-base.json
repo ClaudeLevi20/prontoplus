@@ -1,0 +1,773 @@
+[
+  {
+    "category": "treatment_types",
+    "topic": "Traditional Metal Braces",
+    "keywords": ["braces", "metal braces", "traditional braces", "cost", "price"],
+    "question": "How much do traditional braces cost?",
+    "answer": "Traditional metal braces typically range from $3,000 to $7,000, depending on the complexity of your case and treatment duration. Most insurance plans cover 50-85% of orthodontic treatment, and we offer flexible payment plans with 0% financing.",
+    "follow_up_prompts": [
+      "Would you like to know about our payment plans?",
+      "Do you have dental insurance we should verify?",
+      "Would you like to schedule a free consultation?"
+    ]
+  },
+  {
+    "category": "treatment_types",
+    "topic": "Ceramic Braces",
+    "keywords": ["ceramic braces", "clear braces", "tooth colored", "invisible"],
+    "question": "What are ceramic braces and how much do they cost?",
+    "answer": "Ceramic braces are tooth-colored braces that blend in with your teeth for a more discreet appearance. They typically cost $4,000 to $8,000, which is slightly more than metal braces but less noticeable. They're great for adults and teens who want effective treatment with minimal visibility.",
+    "follow_up_prompts": [
+      "Would you like to see photos of ceramic braces?",
+      "Are you interested in scheduling a consultation to see if ceramic braces are right for you?"
+    ]
+  },
+  {
+    "category": "treatment_types",
+    "topic": "Clear Aligners/Invisalign",
+    "keywords": ["invisalign", "clear aligners", "invisible braces", "removable"],
+    "question": "How does Invisalign work and what's the cost?",
+    "answer": "Invisalign uses clear, removable aligners to gradually move your teeth. Treatment typically takes 12-18 months and costs $4,000 to $8,000. The aligners are virtually invisible and can be removed for eating and cleaning. They're ideal for mild to moderate cases.",
+    "follow_up_prompts": [
+      "Would you like to know if you're a candidate for Invisalign?",
+      "Are you interested in seeing before and after photos?"
+    ]
+  },
+  {
+    "category": "treatment_types",
+    "topic": "Lingual Braces",
+    "keywords": ["lingual braces", "hidden braces", "inside braces", "behind teeth"],
+    "question": "What are lingual braces?",
+    "answer": "Lingual braces are placed on the inside of your teeth, making them completely hidden from view. They're custom-made for each patient and are perfect for adults who need comprehensive treatment but want maximum discretion. Treatment time is similar to traditional braces.",
+    "follow_up_prompts": [
+      "Would you like to learn more about lingual braces?",
+      "Are you interested in scheduling a consultation?"
+    ]
+  },
+  {
+    "category": "treatment_types",
+    "topic": "Self-Ligating Braces",
+    "keywords": ["self ligating", "damon braces", "faster treatment", "less visits"],
+    "question": "What are self-ligating braces?",
+    "answer": "Self-ligating braces use a special clip system instead of rubber bands, which can reduce treatment time by 3-6 months and require fewer adjustment appointments. They're available in both metal and ceramic options and typically cost $3,500 to $7,500.",
+    "follow_up_prompts": [
+      "Would you like to know more about the benefits of self-ligating braces?",
+      "Are you interested in scheduling a consultation?"
+    ]
+  },
+  {
+    "category": "treatment_types",
+    "topic": "Early Intervention Treatment",
+    "keywords": ["early treatment", "phase 1", "ages 7-10", "children", "interceptive"],
+    "question": "What is early orthodontic treatment?",
+    "answer": "Early treatment, also called Phase 1 treatment, is designed for children ages 7-10 to guide jaw growth and correct bite problems before they become more severe. This can reduce the need for more extensive treatment later and may prevent the need for tooth extractions.",
+    "follow_up_prompts": [
+      "Would you like to schedule a free consultation for your child?",
+      "Are you interested in learning more about early treatment benefits?"
+    ]
+  },
+  {
+    "category": "treatment_types",
+    "topic": "Adult Orthodontics",
+    "keywords": ["adult braces", "adult treatment", "over 18", "adult orthodontics"],
+    "question": "Can adults get braces?",
+    "answer": "Absolutely! We treat patients of all ages, and adult orthodontics is very common. Adults can choose from traditional braces, ceramic braces, Invisalign, or lingual braces. Treatment may take slightly longer than for teens, but results are equally effective.",
+    "follow_up_prompts": [
+      "Would you like to know which treatment option might be best for you?",
+      "Are you interested in scheduling a consultation?"
+    ]
+  },
+  {
+    "category": "treatment_types",
+    "topic": "Retainers",
+    "keywords": ["retainers", "retention", "after braces", "maintain results"],
+    "question": "Will I need retainers after treatment?",
+    "answer": "Yes, retainers are essential to maintain your new smile. We provide both removable and fixed retainers. You'll wear them full-time initially, then gradually reduce to nighttime only. Retention is a lifetime commitment to preserve your investment.",
+    "follow_up_prompts": [
+      "Would you like to know more about our retainer options?",
+      "Do you have questions about retainer care?"
+    ]
+  },
+  {
+    "category": "treatment_types",
+    "topic": "Surgical Orthodontics",
+    "keywords": ["surgery", "jaw surgery", "orthognathic", "severe cases"],
+    "question": "What is surgical orthodontics?",
+    "answer": "Surgical orthodontics combines braces with jaw surgery to correct severe bite problems and facial imbalances. This is typically for adults with significant skeletal issues that can't be corrected with braces alone. We work with oral surgeons for comprehensive treatment.",
+    "follow_up_prompts": [
+      "Would you like to learn more about surgical orthodontics?",
+      "Are you interested in scheduling a consultation to evaluate your case?"
+    ]
+  },
+  {
+    "category": "treatment_types",
+    "topic": "Accelerated Orthodontics",
+    "keywords": ["accelerated", "faster treatment", "speed up", "quick results"],
+    "question": "Can orthodontic treatment be accelerated?",
+    "answer": "Yes, we offer several acceleration techniques including Propel, AcceleDent, and high-frequency vibration devices that can reduce treatment time by 30-50%. These are safe, FDA-approved methods that work by stimulating bone remodeling.",
+    "follow_up_prompts": [
+      "Would you like to know more about our acceleration options?",
+      "Are you interested in scheduling a consultation?"
+    ]
+  },
+  {
+    "category": "procedures",
+    "topic": "Initial Consultation",
+    "keywords": ["consultation", "first visit", "exam", "evaluation", "free"],
+    "question": "What happens during the initial consultation?",
+    "answer": "Your consultation includes a comprehensive exam, digital photos, and discussion of treatment options. We'll explain your specific needs, show you before and after photos, and provide a detailed treatment plan with timeline and cost. Consultations are typically free.",
+    "follow_up_prompts": [
+      "Would you like to schedule a free consultation?",
+      "Do you have any specific questions about the consultation process?"
+    ]
+  },
+  {
+    "category": "procedures",
+    "topic": "Records Appointment",
+    "keywords": ["records", "x-rays", "photos", "impressions", "molds"],
+    "question": "What are orthodontic records?",
+    "answer": "Records include X-rays, digital photos, and impressions of your teeth. These help us create a detailed treatment plan and track your progress. Records are usually taken after you decide to start treatment and cost around $200-400.",
+    "follow_up_prompts": [
+      "Would you like to know more about our records process?",
+      "Do you have questions about the records appointment?"
+    ]
+  },
+  {
+    "category": "procedures",
+    "topic": "Adjustment Appointments",
+    "keywords": ["adjustment", "tightening", "wire change", "appointment"],
+    "question": "How often are adjustment appointments?",
+    "answer": "Adjustment appointments are typically every 4-8 weeks, depending on your treatment plan. During these visits, we'll change wires, adjust brackets, and monitor your progress. Each appointment usually takes 15-30 minutes.",
+    "follow_up_prompts": [
+      "Would you like to schedule your next adjustment?",
+      "Do you have questions about what happens during adjustments?"
+    ]
+  },
+  {
+    "category": "procedures",
+    "topic": "Emergency Visits",
+    "keywords": ["emergency", "broken bracket", "wire poking", "urgent"],
+    "question": "What constitutes an orthodontic emergency?",
+    "answer": "True emergencies include severe pain, trauma, or difficulty breathing. Broken brackets, poking wires, or lost aligners are usually not emergencies and can be addressed within 1-2 business days. We have an emergency line for urgent concerns.",
+    "follow_up_prompts": [
+      "Are you experiencing an emergency right now?",
+      "Would you like our emergency contact information?"
+    ]
+  },
+  {
+    "category": "procedures",
+    "topic": "Debonding Appointment",
+    "keywords": ["debonding", "removal", "taking off braces", "finished"],
+    "question": "What happens when braces are removed?",
+    "answer": "The debonding appointment takes about 1-2 hours. We'll remove all brackets and adhesive, polish your teeth, and take final photos. You'll also receive your retainers and instructions for wearing them. This is an exciting milestone in your treatment!",
+    "follow_up_prompts": [
+      "Are you ready to schedule your debonding appointment?",
+      "Do you have questions about what happens after braces are removed?"
+    ]
+  },
+  {
+    "category": "procedures",
+    "topic": "Retainer Fitting",
+    "keywords": ["retainer fitting", "retainer appointment", "new retainer"],
+    "question": "How are retainers fitted?",
+    "answer": "Retainer fitting takes about 30 minutes. We'll ensure your retainers fit comfortably and provide instructions for care and wear. You'll receive a retainer case and cleaning instructions. Proper retainer wear is crucial for maintaining your results.",
+    "follow_up_prompts": [
+      "Would you like to schedule your retainer fitting?",
+      "Do you have questions about retainer care?"
+    ]
+  },
+  {
+    "category": "procedures",
+    "topic": "Progress Check Appointments",
+    "keywords": ["progress check", "follow up", "monitoring", "check up"],
+    "question": "What are progress check appointments?",
+    "answer": "Progress checks are shorter appointments to monitor your treatment progress, usually every 2-3 months. We'll take photos, check your bite, and make minor adjustments if needed. These help ensure your treatment stays on track.",
+    "follow_up_prompts": [
+      "Would you like to schedule your next progress check?",
+      "Do you have concerns about your treatment progress?"
+    ]
+  },
+  {
+    "category": "procedures",
+    "topic": "Virtual Check-ins",
+    "keywords": ["virtual", "telehealth", "online", "remote monitoring"],
+    "question": "Do you offer virtual check-ins?",
+    "answer": "Yes, we offer virtual check-ins for certain types of appointments, especially for Invisalign patients. You can send photos and we'll assess your progress remotely. This is convenient for minor concerns or when you can't make it to the office.",
+    "follow_up_prompts": [
+      "Would you like to schedule a virtual check-in?",
+      "Do you have questions about our virtual services?"
+    ]
+  },
+  {
+    "category": "pricing",
+    "topic": "Braces Cost Range",
+    "keywords": ["cost", "price", "how much", "braces cost"],
+    "question": "How much do braces cost?",
+    "answer": "Traditional braces typically range from $3,000 to $7,000, depending on treatment complexity and duration. Ceramic braces cost $4,000 to $8,000, and Invisalign ranges from $4,000 to $8,000. Most insurance plans cover 50-85% of treatment costs.",
+    "follow_up_prompts": [
+      "Would you like to know about our payment plans?",
+      "Do you have dental insurance we should verify?"
+    ]
+  },
+  {
+    "category": "pricing",
+    "topic": "Invisalign Cost",
+    "keywords": ["invisalign cost", "clear aligners price", "invisible braces cost"],
+    "question": "How much does Invisalign cost?",
+    "answer": "Invisalign typically costs $4,000 to $8,000, depending on the complexity of your case and treatment duration. This includes all aligners, appointments, and retainers. Most dental insurance plans provide the same coverage for Invisalign as traditional braces.",
+    "follow_up_prompts": [
+      "Would you like to know if you're a candidate for Invisalign?",
+      "Are you interested in our payment plan options?"
+    ]
+  },
+  {
+    "category": "pricing",
+    "topic": "Consultation Fees",
+    "keywords": ["consultation cost", "exam fee", "first visit cost"],
+    "question": "How much does a consultation cost?",
+    "answer": "Our initial consultations are typically free! This includes a comprehensive exam, digital photos, and discussion of treatment options. If additional records like X-rays are needed, there may be a small fee of $50-150, but this is often covered by insurance.",
+    "follow_up_prompts": [
+      "Would you like to schedule a free consultation?",
+      "Do you have dental insurance we should verify?"
+    ]
+  },
+  {
+    "category": "pricing",
+    "topic": "Insurance Coverage",
+    "keywords": ["insurance", "coverage", "benefits", "dental insurance"],
+    "question": "Does insurance cover orthodontic treatment?",
+    "answer": "Most dental insurance plans cover 50-85% of orthodontic treatment costs, typically with a lifetime maximum of $1,000 to $3,000. Coverage often depends on age, with many plans covering children up to age 19. We'll verify your benefits before treatment begins.",
+    "follow_up_prompts": [
+      "Would you like us to verify your insurance benefits?",
+      "Do you have questions about your specific insurance plan?"
+    ]
+  },
+  {
+    "category": "pricing",
+    "topic": "Deductibles",
+    "keywords": ["deductible", "out of pocket", "co-pay"],
+    "question": "What about deductibles?",
+    "answer": "Orthodontic deductibles typically range from $500 to $2,000 per family. Unlike regular dental care, orthodontic deductibles are usually paid once per lifetime of treatment, not annually. We'll help you understand your specific deductible and payment schedule.",
+    "follow_up_prompts": [
+      "Would you like us to check your deductible?",
+      "Do you have questions about your payment schedule?"
+    ]
+  },
+  {
+    "category": "pricing",
+    "topic": "Payment Plans",
+    "keywords": ["payment plans", "financing", "monthly payments", "0% interest"],
+    "question": "Do you offer payment plans?",
+    "answer": "Yes! We offer flexible payment plans with 0% financing for qualified patients. Payments can be spread over 12-24 months with no interest. We also accept CareCredit and offer discounts for upfront payments. Our team will work with you to find the best payment option.",
+    "follow_up_prompts": [
+      "Would you like to learn more about our payment options?",
+      "Are you interested in applying for financing?"
+    ]
+  },
+  {
+    "category": "pricing",
+    "topic": "CareCredit",
+    "keywords": ["carecredit", "financing", "credit", "payment"],
+    "question": "Do you accept CareCredit?",
+    "answer": "Yes, we accept CareCredit, which offers flexible payment options with promotional financing. You can apply online or in our office. CareCredit often has special promotions with 0% interest for 6-24 months, making orthodontic treatment more affordable.",
+    "follow_up_prompts": [
+      "Would you like to apply for CareCredit?",
+      "Do you have questions about CareCredit financing?"
+    ]
+  },
+  {
+    "category": "pricing",
+    "topic": "FSA/HSA Eligibility",
+    "keywords": ["FSA", "HSA", "flexible spending", "health savings"],
+    "question": "Can I use FSA or HSA funds?",
+    "answer": "Yes! Orthodontic treatment is typically eligible for FSA and HSA reimbursement. This can help you pay for treatment with pre-tax dollars, saving you money. We'll provide the necessary documentation for your reimbursement claim.",
+    "follow_up_prompts": [
+      "Would you like information about FSA/HSA reimbursement?",
+      "Do you need help with your reimbursement paperwork?"
+    ]
+  },
+  {
+    "category": "pricing",
+    "topic": "Upfront Payment Discounts",
+    "keywords": ["discount", "upfront payment", "cash discount", "pay in full"],
+    "question": "Do you offer discounts for upfront payment?",
+    "answer": "Yes, we offer a 5-10% discount for patients who pay in full at the start of treatment. This can save you hundreds of dollars and eliminates monthly payments. We also offer family discounts when multiple family members are in treatment.",
+    "follow_up_prompts": [
+      "Would you like to know more about our upfront payment discount?",
+      "Are you interested in family treatment discounts?"
+    ]
+  },
+  {
+    "category": "pricing",
+    "topic": "Family Discounts",
+    "keywords": ["family discount", "multiple children", "sibling discount"],
+    "question": "Do you offer family discounts?",
+    "answer": "Yes! We offer family discounts when multiple family members are in treatment simultaneously. This can save you 5-15% on total treatment costs. We also offer sibling discounts and special rates for families with multiple children in braces.",
+    "follow_up_prompts": [
+      "Would you like to know more about our family discounts?",
+      "Are you considering treatment for multiple family members?"
+    ]
+  },
+  {
+    "category": "timeline",
+    "topic": "Average Treatment Duration",
+    "keywords": ["how long", "treatment time", "duration", "months"],
+    "question": "How long does orthodontic treatment take?",
+    "answer": "Most orthodontic treatment takes 12-24 months, depending on the complexity of your case. Minor corrections may take 6-12 months, while complex cases can take 24-36 months. We'll give you a specific timeline during your consultation.",
+    "follow_up_prompts": [
+      "Would you like to know the estimated timeline for your case?",
+      "Are you interested in scheduling a consultation?"
+    ]
+  },
+  {
+    "category": "timeline",
+    "topic": "Minor Corrections",
+    "keywords": ["minor", "simple", "quick treatment", "short time"],
+    "question": "How long for minor corrections?",
+    "answer": "Minor corrections typically take 6-12 months. These include simple crowding, minor spacing issues, or small bite adjustments. Treatment time depends on your specific needs and how well you follow instructions.",
+    "follow_up_prompts": [
+      "Would you like to know if your case qualifies as minor correction?",
+      "Are you interested in scheduling a consultation?"
+    ]
+  },
+  {
+    "category": "timeline",
+    "topic": "Complex Cases",
+    "keywords": ["complex", "severe", "long treatment", "difficult case"],
+    "question": "How long for complex cases?",
+    "answer": "Complex cases typically take 24-36 months. These include severe crowding, significant bite problems, or cases requiring extractions. We'll explain your specific timeline and what makes your case complex during your consultation.",
+    "follow_up_prompts": [
+      "Would you like to know more about complex treatment?",
+      "Are you interested in scheduling a consultation?"
+    ]
+  },
+  {
+    "category": "timeline",
+    "topic": "Teen Treatment Timeline",
+    "keywords": ["teen", "adolescent", "teenager", "young adult"],
+    "question": "How long does treatment take for teens?",
+    "answer": "Teen treatment typically takes 18-24 months. Teens often respond well to treatment because their jaws are still growing. Compliance with instructions like wearing rubber bands is crucial for staying on schedule.",
+    "follow_up_prompts": [
+      "Would you like to know more about teen treatment?",
+      "Are you interested in scheduling a consultation for your teen?"
+    ]
+  },
+  {
+    "category": "timeline",
+    "topic": "Adult Treatment Timeline",
+    "keywords": ["adult", "adult treatment", "over 18", "adult timeline"],
+    "question": "How long does treatment take for adults?",
+    "answer": "Adult treatment typically takes 18-30 months, sometimes longer than teen treatment because adult bones are fully developed. However, adults are often more compliant with instructions, which can help treatment progress smoothly.",
+    "follow_up_prompts": [
+      "Would you like to know more about adult treatment?",
+      "Are you interested in scheduling a consultation?"
+    ]
+  },
+  {
+    "category": "timeline",
+    "topic": "Retention Phase",
+    "keywords": ["retention", "retainers", "after treatment", "maintenance"],
+    "question": "How long do I need to wear retainers?",
+    "answer": "Retention is a lifetime commitment! You'll wear retainers full-time initially, then gradually reduce to nighttime only. Most patients wear retainers at night for life to maintain their results. This is crucial for preserving your investment in treatment.",
+    "follow_up_prompts": [
+      "Would you like to know more about our retainer options?",
+      "Do you have questions about retainer care?"
+    ]
+  },
+  {
+    "category": "insurance_faqs",
+    "topic": "Major Insurance Providers",
+    "keywords": ["delta dental", "metlife", "cigna", "aetna", "insurance providers"],
+    "question": "Which insurance providers do you accept?",
+    "answer": "We accept most major dental insurance providers including Delta Dental, MetLife, Cigna, Aetna, UnitedHealthcare, Guardian, and many others. We're also in-network with many PPO plans and can work with out-of-network benefits.",
+    "follow_up_prompts": [
+      "Would you like us to verify your specific insurance benefits?",
+      "Do you have questions about your insurance coverage?"
+    ]
+  },
+  {
+    "category": "insurance_faqs",
+    "topic": "Pre-authorization Process",
+    "keywords": ["pre-authorization", "prior approval", "insurance approval"],
+    "question": "Do I need pre-authorization for treatment?",
+    "answer": "Many insurance plans require pre-authorization for orthodontic treatment. We'll submit the necessary paperwork including photos, X-rays, and treatment plan to your insurance company. This process typically takes 2-4 weeks.",
+    "follow_up_prompts": [
+      "Would you like us to start the pre-authorization process?",
+      "Do you have questions about the approval process?"
+    ]
+  },
+  {
+    "category": "insurance_faqs",
+    "topic": "Out-of-Network Benefits",
+    "keywords": ["out of network", "PPO", "out of network benefits"],
+    "question": "What if you're out-of-network with my insurance?",
+    "answer": "Even if we're out-of-network, your insurance may still provide benefits, though typically at a lower percentage. We'll verify your out-of-network benefits and help you understand your coverage. Many patients find the quality of care worth the difference.",
+    "follow_up_prompts": [
+      "Would you like us to check your out-of-network benefits?",
+      "Do you have questions about out-of-network coverage?"
+    ]
+  },
+  {
+    "category": "insurance_faqs",
+    "topic": "Lifetime Orthodontic Maximum",
+    "keywords": ["lifetime maximum", "orthodontic maximum", "benefit limit"],
+    "question": "What is a lifetime orthodontic maximum?",
+    "answer": "Most insurance plans have a lifetime maximum for orthodontic treatment, typically $1,000 to $3,000. This is the total amount they'll pay for orthodontic treatment over your lifetime, regardless of how many times you need treatment.",
+    "follow_up_prompts": [
+      "Would you like us to check your lifetime maximum?",
+      "Do you have questions about your benefit limits?"
+    ]
+  },
+  {
+    "category": "insurance_faqs",
+    "topic": "Age Limits on Coverage",
+    "keywords": ["age limit", "age 19", "adult coverage", "age restrictions"],
+    "question": "Are there age limits on orthodontic coverage?",
+    "answer": "Many insurance plans have age limits, often ending coverage at age 19. However, some plans cover adults up to age 26, and some have no age limits. We'll check your specific plan's age restrictions during benefits verification.",
+    "follow_up_prompts": [
+      "Would you like us to verify your age limits?",
+      "Do you have questions about adult coverage?"
+    ]
+  },
+  {
+    "category": "insurance_faqs",
+    "topic": "Coordination of Benefits",
+    "keywords": ["coordination of benefits", "dual coverage", "both parents insured"],
+    "question": "What if I have coverage through both parents?",
+    "answer": "If you have coverage through both parents' insurance plans, we can coordinate benefits to maximize your coverage. The primary plan pays first, then the secondary plan may cover additional costs. This can significantly reduce your out-of-pocket expenses.",
+    "follow_up_prompts": [
+      "Would you like us to coordinate your dual coverage?",
+      "Do you have questions about coordination of benefits?"
+    ]
+  },
+  {
+    "category": "insurance_faqs",
+    "topic": "Filing Claims Process",
+    "keywords": ["filing claims", "insurance claims", "claim process"],
+    "question": "How do you handle insurance claims?",
+    "answer": "We handle all insurance claims for you! We'll submit claims electronically and track their progress. You'll receive statements showing what your insurance paid and what you owe. We'll also help with any claim denials or appeals.",
+    "follow_up_prompts": [
+      "Do you have questions about our claims process?",
+      "Would you like to know more about how we handle insurance?"
+    ]
+  },
+  {
+    "category": "insurance_faqs",
+    "topic": "Insurance Verification",
+    "keywords": ["verify benefits", "check coverage", "benefits verification"],
+    "question": "Will you verify my insurance before treatment?",
+    "answer": "Yes, we always verify your insurance benefits before starting treatment. This includes checking coverage percentages, deductibles, lifetime maximums, and any restrictions. We'll provide you with a detailed breakdown of your benefits.",
+    "follow_up_prompts": [
+      "Would you like us to verify your insurance benefits?",
+      "Do you have questions about your coverage?"
+    ]
+  },
+  {
+    "category": "insurance_faqs",
+    "topic": "What Insurance Doesn't Cover",
+    "keywords": ["not covered", "exclusions", "what's not covered"],
+    "question": "What doesn't insurance cover?",
+    "answer": "Insurance typically doesn't cover cosmetic-only treatment, adult treatment in some plans, or treatment that's considered experimental. They also usually don't cover lost or broken appliances, or treatment for conditions that existed before coverage began.",
+    "follow_up_prompts": [
+      "Would you like to know what your specific plan covers?",
+      "Do you have questions about coverage exclusions?"
+    ]
+  },
+  {
+    "category": "insurance_faqs",
+    "topic": "Secondary Insurance Usage",
+    "keywords": ["secondary insurance", "supplemental", "additional coverage"],
+    "question": "Can I use secondary insurance?",
+    "answer": "Yes, if you have secondary insurance, we can coordinate benefits to maximize your coverage. Secondary insurance often covers deductibles and co-pays from your primary plan, significantly reducing your out-of-pocket costs.",
+    "follow_up_prompts": [
+      "Would you like us to check your secondary insurance benefits?",
+      "Do you have questions about secondary coverage?"
+    ]
+  },
+  {
+    "category": "emergency_protocols",
+    "topic": "Broken Bracket",
+    "keywords": ["broken bracket", "bracket came off", "loose bracket"],
+    "question": "What should I do if a bracket breaks?",
+    "answer": "A broken bracket is usually not an emergency. Call us to schedule a repair appointment within 1-2 business days. If the bracket is causing discomfort, you can use orthodontic wax to cover any sharp edges. Avoid hard, sticky foods until it's repaired.",
+    "follow_up_prompts": [
+      "Would you like to schedule a repair appointment?",
+      "Do you need orthodontic wax?"
+    ]
+  },
+  {
+    "category": "emergency_protocols",
+    "topic": "Poking Wire",
+    "keywords": ["wire poking", "sharp wire", "wire sticking out"],
+    "question": "What if a wire is poking me?",
+    "answer": "If a wire is poking your cheek or gum, try using orthodontic wax to cover the sharp end. You can also try using a pencil eraser to gently push the wire away from the soft tissue. Call us to schedule an adjustment appointment.",
+    "follow_up_prompts": [
+      "Would you like to schedule an adjustment appointment?",
+      "Do you need orthodontic wax?"
+    ]
+  },
+  {
+    "category": "emergency_protocols",
+    "topic": "Lost Aligner",
+    "keywords": ["lost aligner", "missing aligner", "invisalign lost"],
+    "question": "What if I lose an Invisalign aligner?",
+    "answer": "If you lose an aligner, use your previous set of aligners until we can order a replacement. Call us immediately so we can order a new aligner. Don't skip ahead to the next set, as this can cause tracking issues.",
+    "follow_up_prompts": [
+      "Would you like us to order a replacement aligner?",
+      "Do you have questions about aligner care?"
+    ]
+  },
+  {
+    "category": "emergency_protocols",
+    "topic": "Severe Pain",
+    "keywords": ["severe pain", "bad pain", "emergency pain"],
+    "question": "What if I'm in severe pain?",
+    "answer": "If you're experiencing severe pain that's not relieved by over-the-counter pain medication, call us immediately. We may need to see you the same day or provide emergency care. Severe pain could indicate a more serious issue that needs attention.",
+    "follow_up_prompts": [
+      "Are you experiencing severe pain right now?",
+      "Would you like our emergency contact information?"
+    ]
+  },
+  {
+    "category": "emergency_protocols",
+    "topic": "Swollen Gums",
+    "keywords": ["swollen gums", "gum swelling", "inflamed gums"],
+    "question": "What if my gums are swollen?",
+    "answer": "Swollen gums can be caused by poor oral hygiene or food trapped around brackets. Rinse with warm salt water and brush gently around the brackets. If swelling persists or worsens, call us for an appointment. Good oral hygiene is crucial during treatment.",
+    "follow_up_prompts": [
+      "Would you like tips for better oral hygiene?",
+      "Do you need to schedule a cleaning appointment?"
+    ]
+  },
+  {
+    "category": "emergency_protocols",
+    "topic": "Loose Bands/Spacers",
+    "keywords": ["loose bands", "spacers", "rubber bands"],
+    "question": "What if my bands or spacers come loose?",
+    "answer": "If bands or spacers come loose, call us to schedule a replacement appointment. Don't try to replace them yourself, as this can cause damage. We'll replace them during a quick appointment, usually within 1-2 business days.",
+    "follow_up_prompts": [
+      "Would you like to schedule a replacement appointment?",
+      "Do you have questions about band care?"
+    ]
+  },
+  {
+    "category": "office_info",
+    "topic": "Office Hours",
+    "keywords": ["hours", "office hours", "when open", "schedule"],
+    "question": "What are your office hours?",
+    "answer": "We're open Monday through Friday from 8:00 AM to 6:00 PM, and Saturday mornings from 9:00 AM to 2:00 PM. We're closed on Sundays. We offer early morning and evening appointments to accommodate busy schedules.",
+    "follow_up_prompts": [
+      "Would you like to schedule an appointment?",
+      "Do you need an early morning or evening appointment?"
+    ]
+  },
+  {
+    "category": "office_info",
+    "topic": "Location and Parking",
+    "keywords": ["location", "address", "parking", "directions"],
+    "question": "Where are you located and is parking available?",
+    "answer": "We're located at [ADDRESS] with convenient parking available in our lot. We're easily accessible from [MAJOR ROADS] and have handicap-accessible parking. You can find detailed directions on our website.",
+    "follow_up_prompts": [
+      "Would you like directions to our office?",
+      "Do you have questions about parking?"
+    ]
+  },
+  {
+    "category": "office_info",
+    "topic": "Payment Methods",
+    "keywords": ["payment methods", "how to pay", "accepted payments"],
+    "question": "What payment methods do you accept?",
+    "answer": "We accept cash, check, all major credit cards, CareCredit, and offer flexible payment plans. We also accept FSA and HSA payments. For your convenience, we can set up automatic payments for your monthly installments.",
+    "follow_up_prompts": [
+      "Would you like to set up automatic payments?",
+      "Do you have questions about our payment options?"
+    ]
+  },
+  {
+    "category": "office_info",
+    "topic": "Cancellation Policy",
+    "keywords": ["cancellation", "reschedule", "missed appointment", "no show"],
+    "question": "What's your cancellation policy?",
+    "answer": "We require 24-48 hours notice for appointment cancellations or rescheduling. Missed appointments without notice may incur a fee. We understand emergencies happen, so please call as soon as possible if you need to reschedule.",
+    "follow_up_prompts": [
+      "Do you need to reschedule an appointment?",
+      "Would you like to schedule a new appointment?"
+    ]
+  },
+  {
+    "category": "office_info",
+    "topic": "Emergency Contact",
+    "keywords": ["emergency contact", "after hours", "urgent", "emergency number"],
+    "question": "How do I reach you after hours for emergencies?",
+    "answer": "For true orthodontic emergencies, call our main number and follow the prompts to reach our emergency line. We have an orthodontist on call for urgent situations. For non-emergency questions, you can leave a message and we'll return your call the next business day.",
+    "follow_up_prompts": [
+      "Are you experiencing an emergency right now?",
+      "Would you like our emergency contact information?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Does It Hurt",
+    "keywords": ["hurt", "pain", "discomfort", "sore"],
+    "question": "Does orthodontic treatment hurt?",
+    "answer": "You may experience some discomfort when braces are first placed and after adjustments, but it's usually mild and temporary. Over-the-counter pain medication can help. Most patients describe it as pressure or soreness rather than pain.",
+    "follow_up_prompts": [
+      "Do you have questions about managing discomfort?",
+      "Would you like tips for making treatment more comfortable?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Sports with Braces",
+    "keywords": ["sports", "athletics", "mouthguard", "playing sports"],
+    "question": "Can I play sports with braces?",
+    "answer": "Yes, you can play sports with braces! We recommend wearing a mouthguard to protect your braces and teeth. We can provide custom mouthguards or recommend over-the-counter options. Contact sports especially require protection.",
+    "follow_up_prompts": [
+      "Would you like information about mouthguards?",
+      "Do you need a custom mouthguard?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Foods to Avoid",
+    "keywords": ["foods to avoid", "what not to eat", "restrictions", "diet"],
+    "question": "What foods should I avoid with braces?",
+    "answer": "Avoid hard, sticky, and chewy foods that can damage braces: ice, hard candy, gum, caramel, nuts, and popcorn. Cut hard fruits and vegetables into small pieces. Sticky foods can pull off brackets and delay treatment.",
+    "follow_up_prompts": [
+      "Would you like a complete list of foods to avoid?",
+      "Do you have questions about specific foods?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Cleaning Braces",
+    "keywords": ["cleaning", "brushing", "flossing", "oral hygiene"],
+    "question": "How do I clean my braces?",
+    "answer": "Brush after every meal using a soft-bristled toothbrush and fluoride toothpaste. Use an interdental brush or floss threader to clean between teeth and around brackets. Rinse with fluoride mouthwash. Good oral hygiene prevents cavities and gum problems.",
+    "follow_up_prompts": [
+      "Would you like oral hygiene tips?",
+      "Do you need help with brushing techniques?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Playing Instruments",
+    "keywords": ["instruments", "music", "playing music", "band"],
+    "question": "Can I still play musical instruments?",
+    "answer": "Yes, you can play most instruments with braces! It may take a few days to adjust, but most musicians adapt quickly. Wind instrument players might need slightly more practice time initially. We can provide wax if needed for comfort.",
+    "follow_up_prompts": [
+      "Do you play a wind instrument?",
+      "Would you like tips for playing with braces?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Smoking/Vaping Impact",
+    "keywords": ["smoking", "vaping", "tobacco", "nicotine"],
+    "question": "How does smoking or vaping affect treatment?",
+    "answer": "Smoking and vaping can slow tooth movement and increase the risk of gum disease and cavities during treatment. We strongly recommend quitting for better results and overall health. We can provide resources to help you quit.",
+    "follow_up_prompts": [
+      "Would you like resources to help you quit smoking?",
+      "Do you have questions about the effects on treatment?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Teeth Whitening",
+    "keywords": ["whitening", "bleaching", "white teeth", "stains"],
+    "question": "Can I whiten my teeth during treatment?",
+    "answer": "We don't recommend whitening during active treatment because it can cause uneven coloring when braces are removed. Wait until treatment is complete for the best results. We offer professional whitening after treatment.",
+    "follow_up_prompts": [
+      "Would you like information about post-treatment whitening?",
+      "Do you have questions about maintaining white teeth?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Lost Retainer",
+    "keywords": ["lost retainer", "broken retainer", "retainer replacement"],
+    "question": "What if I lose my retainer?",
+    "answer": "If you lose your retainer, call us immediately to schedule a replacement appointment. We'll take new impressions and make a new retainer. Don't wait too long, as teeth can shift quickly without retainers.",
+    "follow_up_prompts": [
+      "Would you like to schedule a retainer replacement?",
+      "Do you have questions about retainer care?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Compliance Importance",
+    "keywords": ["compliance", "following instructions", "rubber bands", "wear time"],
+    "question": "How important is following instructions?",
+    "answer": "Following instructions is crucial for successful treatment! Wear rubber bands as directed, maintain good oral hygiene, avoid restricted foods, and keep all appointments. Non-compliance can extend treatment time and affect results.",
+    "follow_up_prompts": [
+      "Do you have questions about specific instructions?",
+      "Would you like tips for staying compliant?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Elastic Wear",
+    "keywords": ["rubber bands", "elastics", "bands", "wear time"],
+    "question": "How long do I need to wear rubber bands?",
+    "answer": "Rubber band wear time varies by case, but typically 12-16 hours daily. Wear them as directed - consistency is more important than perfect timing. Remove them only for eating and brushing, then replace immediately.",
+    "follow_up_prompts": [
+      "Do you have questions about rubber band wear?",
+      "Would you like tips for remembering to wear them?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Speech Changes",
+    "keywords": ["speech", "talking", "lisp", "pronunciation"],
+    "question": "Will braces affect my speech?",
+    "answer": "You may experience slight speech changes when braces are first placed, especially with certain sounds. This is temporary and most people adapt within a few days to a week. Practice speaking and reading aloud to help adjust.",
+    "follow_up_prompts": [
+      "Do you have concerns about speech changes?",
+      "Would you like tips for adjusting to braces?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Kissing with Braces",
+    "keywords": ["kissing", "dating", "relationships", "social"],
+    "question": "Can I kiss with braces?",
+    "answer": "Yes, you can kiss with braces! Your partner may notice the braces initially, but most people adapt quickly. Be gentle to avoid discomfort. The braces won't interfere with kissing once you're both comfortable.",
+    "follow_up_prompts": [
+      "Do you have other social concerns about braces?",
+      "Would you like tips for confidence with braces?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Social Concerns",
+    "keywords": ["confidence", "self-esteem", "social", "embarrassed"],
+    "question": "I'm worried about how braces will look",
+    "answer": "It's normal to feel self-conscious initially, but most people find braces less noticeable than expected. Many patients report increased confidence as their teeth improve. Remember, braces are temporary but your beautiful smile is forever!",
+    "follow_up_prompts": [
+      "Would you like to see before and after photos?",
+      "Do you have questions about treatment options?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Photos During Treatment",
+    "keywords": ["photos", "pictures", "selfies", "documentation"],
+    "question": "Should I take photos during treatment?",
+    "answer": "Yes! Taking progress photos is a great way to see your improvement and stay motivated. Take photos monthly from the same angles. You'll be amazed at the changes! We also take professional photos at key milestones.",
+    "follow_up_prompts": [
+      "Would you like tips for taking progress photos?",
+      "Do you have questions about our photo documentation?"
+    ]
+  },
+  {
+    "category": "treatment_faqs",
+    "topic": "Travel with Braces",
+    "keywords": ["travel", "vacation", "trip", "away from home"],
+    "question": "Can I travel with braces?",
+    "answer": "Yes, you can travel with braces! Pack orthodontic wax, a travel toothbrush, and floss. If you'll be away for more than 6 weeks, let us know so we can adjust your appointment schedule. We can provide emergency contact information.",
+    "follow_up_prompts": [
+      "Do you have travel plans during treatment?",
+      "Would you like our emergency contact information?"
+    ]
+  }
+]

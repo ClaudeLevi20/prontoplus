@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@prontoplus/ui';
 import { Phone, Calendar, Users, Shield } from 'lucide-react';
 import { DemoSection } from '@/components/demo/demo-section';
+import DemoPhoneCTA from '@/components/DemoPhoneCTA';
+import DemoScenarios from '@/components/demo/demo-scenarios';
 
 export default function Home() {
   return (
@@ -26,7 +28,7 @@ export default function Home() {
               <Link href="#demo">
                 <Button size="lg" className="text-lg">
                   <Phone className="mr-2 h-5 w-5" />
-                  Call Demo
+                  Try Demo
                 </Button>
               </Link>
               
@@ -174,21 +176,22 @@ export default function Home() {
       {/* CTA Section */}
       <section id="demo" className="py-24">
         <div className="container px-4">
-          <div className="mx-auto max-w-3xl rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 p-8 text-center sm:p-12">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              Ready to Transform Your Practice?
-            </h2>
-            <p className="mb-8 text-lg text-muted-foreground">
-              Schedule a demo call with our AI receptionist and see how ProntoPlus
-              can streamline your operations.
-            </p>
-            <Button size="lg" className="text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Schedule Demo Call
-            </Button>
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+                Ready to Transform Your Practice?
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Call our AI receptionist demo and experience the future of orthodontic patient management
+              </p>
+            </div>
+            <DemoPhoneCTA />
           </div>
         </div>
       </section>
+
+      {/* Demo Scenarios Section */}
+      <DemoScenarios />
     </div>
   );
 }

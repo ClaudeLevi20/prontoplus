@@ -31,12 +31,23 @@ This ensures that:
 Ensure these environment variables are set in your Railway project:
 
 ```bash
+# Core Application
 DATABASE_URL=postgresql://username:password@hostname:5432/database
 NODE_ENV=production
 PORT=4000
 LOG_LEVEL=info
 REDIS_URL=redis://hostname:6379  # Optional
 CONFIGCAT_SDK_KEY=your_key  # Optional
+
+# Telnyx AI Assistant Integration
+TELNYX_API_KEY=KEY_your_telnyx_api_key
+TELNYX_API_V2_KEY=your_telnyx_v2_key
+TELNYX_PHONE_NUMBER=+1234567890
+TELNYX_WEBHOOK_SECRET=your_webhook_secret
+NEXT_PUBLIC_DEMO_PHONE_NUMBER=+1 (555) 123-4567
+
+# Slack Notifications (Optional)
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/your/webhook/url
 ```
 
 ### Build Process
@@ -99,12 +110,57 @@ NODE_ENV=production
 PORT=3000
 NEXT_PUBLIC_API_URL=https://your-api-url.up.railway.app
 NEXT_PUBLIC_CONFIGCAT_SDK_KEY=your_public_configcat_key
+NEXT_PUBLIC_DEMO_PHONE_NUMBER=+1 (555) 123-4567
 ```
 
 ### 3. Get Project IDs
 
 1. In each Railway project, go to Settings → General
 2. Copy the Project ID (you'll need this for GitHub secrets)
+
+## Telnyx AI Assistant Setup
+
+### Prerequisites
+
+- Telnyx account (sign up at [telnyx.com](https://telnyx.com))
+- ProntoPlus application deployed
+- Slack workspace for notifications (optional)
+
+### Quick Setup
+
+1. **Create Telnyx Account**: Sign up at [telnyx.com](https://telnyx.com)
+2. **Provision Phone Number**: Buy a US phone number (~$2/month)
+3. **Get API Credentials**: Create API key with call control permissions
+4. **Configure AI Assistant**: Set up voice, prompts, and knowledge base
+5. **Set Up Webhooks**: Configure webhook URL to your Railway API
+6. **Test Integration**: Make test calls and verify webhook delivery
+
+### Detailed Setup
+
+For complete setup instructions, see [Telnyx Setup Guide](./TELNYX_SETUP.md).
+
+### Required Environment Variables
+
+Add these to your Railway API project:
+
+```bash
+# Telnyx Configuration
+TELNYX_API_KEY=KEY_your_api_key_here
+TELNYX_API_V2_KEY=your_v2_key_here
+TELNYX_PHONE_NUMBER=+1234567890
+TELNYX_WEBHOOK_SECRET=your_webhook_secret_here
+NEXT_PUBLIC_DEMO_PHONE_NUMBER=+1 (555) 123-4567
+
+# Slack Notifications (Optional)
+SLACK_WEBHOOK_URL=https://hooks.slack.com/services/your/webhook/url
+```
+
+### Webhook Configuration
+
+1. In Telnyx Portal, go to **Webhooks** → **Create Webhook**
+2. Set URL to: `https://your-api-url.up.railway.app/webhooks/telnyx`
+3. Select events: `call.initiated`, `call.answered`, `call.completed`, `call.recording.saved`
+4. Generate and save webhook secret
 
 ## GitHub Secrets Configuration
 

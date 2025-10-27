@@ -5,7 +5,7 @@
 [![Frontend Deployment](https://github.com/your-username/ProntoPlus/workflows/Deploy%20Frontend/badge.svg)](https://github.com/your-username/ProntoPlus/actions/workflows/deploy-frontend.yml)
 [![codecov](https://codecov.io/gh/your-username/ProntoPlus/branch/main/graph/badge.svg)](https://codecov.io/gh/your-username/ProntoPlus)
 
-AI-powered receptionist solution for orthodontic practices.
+AI-powered receptionist solution for orthodontic practices with live demo phone integration.
 
 ## Architecture
 
@@ -170,6 +170,16 @@ This project uses Railway for deployment with automated CI/CD pipelines:
 - **Frontend**: [https://prontoplus-frontend.up.railway.app](https://prontoplus-frontend.up.railway.app)
 - **API**: [https://prontoplus-api.up.railway.app](https://prontoplus-api.up.railway.app)
 - **API Documentation**: [https://prontoplus-api.up.railway.app/api/docs](https://prontoplus-api.up.railway.app/api/docs)
+- **Demo Phone**: Call our AI receptionist at the number displayed on the landing page
+
+### Features
+
+- **AI Receptionist**: 24/7 intelligent call handling with natural conversation
+- **Call Analytics**: Real-time monitoring and analytics dashboard
+- **Lead Capture**: Automatic lead capture and management
+- **Slack Integration**: Instant notifications for new calls and leads
+- **Admin Dashboard**: Comprehensive call management and analytics
+- **Demo Integration**: Live demo phone number for testing
 
 ## Documentation
 
@@ -178,6 +188,7 @@ This project uses Railway for deployment with automated CI/CD pipelines:
 - **[Frontend Documentation](apps/frontend/README.md)** - Frontend development guide
 - **[Architecture](docs/ARCHITECTURE.md)** - System architecture and design decisions
 - **[Deployment Guide](docs/DEPLOYMENT.md)** - Production deployment instructions
+- **[Telnyx Setup Guide](docs/TELNYX_SETUP.md)** - AI Assistant integration setup
 - **[Troubleshooting](docs/TROUBLESHOOTING.md)** - Common issues and solutions
 - **[Contributing](CONTRIBUTING.md)** - Contribution guidelines and code review process
 

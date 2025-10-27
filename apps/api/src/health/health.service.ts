@@ -2,6 +2,8 @@ import { Injectable, Logger } from '@nestjs/common';
 import { ConfigCatService } from '../config-cat/config-cat.service';
 import { PrismaService } from '../database/prisma.service';
 import { RedisService } from '../cache/redis.service';
+import { TelnyxService } from '../modules/telnyx/telnyx.service';
+import { NotificationsService } from '../modules/notifications/notifications.service';
 
 /**
  * Service for comprehensive health checks
@@ -20,6 +22,8 @@ export class HealthService {
     private configCatService: ConfigCatService,
     private prismaService: PrismaService,
     private redisService: RedisService,
+    private telnyxService: TelnyxService,
+    private notificationsService: NotificationsService,
   ) {}
 
   /**
@@ -33,10 +37,12 @@ export class HealthService {
 
     try {
       // Check all services in parallel
-      const [databaseHealth, redisHealth, featureFlagsHealth] = await Promise.allSettled([
+      const [databaseHealth, redisHealth, featureFlagsHealth, telnyxHealth, slackHealth] = await Promise.allSettled([
         this.checkDatabase(),
         this.checkRedis(),
         this.checkFeatureFlags(),
+        this.checkTelnyx(),
+        this.checkSlack(),
       ]);
 
       const responseTime = Date.now() - startTime;
@@ -46,6 +52,8 @@ export class HealthService {
         database: this.getServiceStatus(databaseHealth),
         redis: this.getServiceStatus(redisHealth),
         featureFlags: this.getServiceStatus(featureFlagsHealth),
+        telnyx: this.getServiceStatus(telnyxHealth),
+        slack: this.getServiceStatus(slackHealth),
       };
 
       const overallStatus = this.determineOverallStatus(services);
@@ -85,6 +93,8 @@ export class HealthService {
           database: { status: 'unknown', message: 'Health check failed' },
           redis: { status: 'unknown', message: 'Health check failed' },
           featureFlags: { status: 'unknown', message: 'Health check failed' },
+          telnyx: { status: 'unknown', message: 'Health check failed' },
+          slack: { status: 'unknown', message: 'Health check failed' },
         },
       };
     }
@@ -235,6 +245,100 @@ export class HealthService {
   }
 
   /**
+   * Check Telnyx API connectivity
+   * 
+   * @returns Promise<ServiceHealth>
+   */
+  private async checkTelnyx(): Promise<ServiceHealth> {
+    try {
+      const startTime = Date.now();
+      
+      const isConnected = await this.telnyxService.checkConnectivity();
+      
+      const responseTime = Date.now() - startTime;
+      
+      if (isConnected) {
+        return {
+          status: 'healthy',
+          message: 'Telnyx API connection successful',
+          responseTime: `${responseTime}ms`,
+          details: {
+            connected: true,
+            apiKey: 'configured',
+          },
+        };
+      } else {
+        return {
+          status: 'unhealthy',
+          message: 'Telnyx API connection failed',
+          details: {
+            connected: false,
+            apiKey: 'not configured or invalid',
+          },
+        };
+      }
+    } catch (error) {
+      this.logger.error('Telnyx health check failed', error);
+      
+      return {
+        status: 'unhealthy',
+        message: `Telnyx API check failed: ${error instanceof Error ? error.message : String(error)}`,
+        details: {
+          connected: false,
+          error: error instanceof Error ? error.message : String(error),
+        },
+      };
+    }
+  }
+
+  /**
+   * Check Slack webhook connectivity
+   * 
+   * @returns Promise<ServiceHealth>
+   */
+  private async checkSlack(): Promise<ServiceHealth> {
+    try {
+      const startTime = Date.now();
+      
+      const isConnected = await this.notificationsService.checkConnectivity();
+      
+      const responseTime = Date.now() - startTime;
+      
+      if (isConnected) {
+        return {
+          status: 'healthy',
+          message: 'Slack webhook connection successful',
+          responseTime: `${responseTime}ms`,
+          details: {
+            connected: true,
+            webhookUrl: 'configured',
+          },
+        };
+      } else {
+        return {
+          status: 'unhealthy',
+          message: 'Slack webhook connection failed',
+          details: {
+            connected: false,
+            webhookUrl: 'not configured or invalid',
+          },
+        };
+      }
+    } catch (error) {
+      this.logger.error('Slack health check failed', error);
+      
+      return {
+        status: 'unhealthy',
+        message: `Slack webhook check failed: ${error instanceof Error ? error.message : String(error)}`,
+        details: {
+          connected: false,
+          error: error instanceof Error ? error.message : String(error),
+        },
+      };
+    }
+  }
+
+  /**
    * Determine overall health status based on individual services
    * 
    * @param services - Individual service health statuses
@@ -256,7 +360,7 @@ export class HealthService {
 /**
  * Interface for individual service health status
  */
-interface ServiceHealth {
+export interface ServiceHealth {
   status: 'healthy' | 'unhealthy' | 'degraded';
   message: string;
   responseTime?: string;

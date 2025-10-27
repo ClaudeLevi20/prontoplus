@@ -3,6 +3,8 @@ import type {
   UserResponse,
   PracticeResponse,
   ApiErrorResponse,
+  Call,
+  DemoLead,
 } from './api-types';
 
 // Custom API Error
@@ -203,6 +205,75 @@ class ApiClient {
     
     delete: (id: string): Promise<void> => 
       this.delete<void>(`/practices/${id}`, { requiresAuth: true }),
+  };
+
+  calls = {
+    getAll: (filters?: {
+      status?: string;
+      direction?: string;
+      startDate?: string;
+      endDate?: string;
+      page?: number;
+      limit?: number;
+    }): Promise<{
+      calls: Call[];
+      total: number;
+      page: number;
+      limit: number;
+    }> => 
+      this.get('/telnyx/calls', { 
+        params: filters as Record<string, string | number | boolean>,
+        requiresAuth: true 
+      }),
+    
+    getById: (id: string): Promise<Call> => 
+      this.get<Call>(`/telnyx/calls/${id}`, { requiresAuth: true }),
+    
+    getAnalytics: (filters?: {
+      startDate?: string;
+      endDate?: string;
+    }): Promise<{
+      calls: {
+        total: number;
+        completed: number;
+        averageDuration: number;
+        completionRate: number;
+      };
+      leads: {
+        totalLeads: number;
+        capturedLeads: number;
+        captureRate: number;
+        interestBreakdown: {
+          hot: number;
+          warm: number;
+          cold: number;
+          unqualified: number;
+        };
+      };
+    }> => 
+      this.get('/telnyx/analytics', { 
+        params: filters as Record<string, string | number | boolean>,
+        requiresAuth: true 
+      }),
+  };
+
+  leads = {
+    getAll: (filters?: {
+      interestLevel?: string;
+      captured?: boolean;
+      limit?: number;
+      offset?: number;
+    }): Promise<{
+      leads: DemoLead[];
+      total: number;
+    }> => 
+      this.get('/telnyx/leads', { 
+        params: filters as Record<string, string | number | boolean>,
+        requiresAuth: true 
+      }),
+    
+    updateInterest: (leadId: string, interestLevel: string): Promise<DemoLead> => 
+      this.patch<DemoLead>(`/telnyx/leads/${leadId}`, { interestLevel }, { requiresAuth: true }),
   };
 }
 

@@ -4,12 +4,12 @@ import {
   HealthCheck,
   PrismaHealthIndicator,
   MemoryHealthIndicator,
-  DiskHealthIndicator,
 } from '@nestjs/terminus';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { PrismaService } from '../../database/prisma.service';
 import { RedisService } from '../../cache/redis.service';
 import { ConfigCatService } from '../../config-cat/config-cat.service';
+import { HealthService } from '../../health/health.service';
 
 @ApiTags('health')
 @Controller('health')
@@ -18,10 +18,10 @@ export class HealthController {
     private health: HealthCheckService,
     private prismaHealth: PrismaHealthIndicator,
     private memory: MemoryHealthIndicator,
-    private disk: DiskHealthIndicator,
     private prisma: PrismaService,
     private redis: RedisService,
     private configCatService: ConfigCatService,
+    private healthService: HealthService,
   ) {}
 
   @Get()
@@ -74,12 +74,29 @@ export class HealthController {
   @ApiResponse({ status: 200, description: 'All services are healthy' })
   @ApiResponse({ status: 503, description: 'One or more services are unhealthy' })
   @HealthCheck()
-  checkAll() {
-    return this.health.check([
-      () => this.memory.checkHeap('memory_heap', 150 * 1024 * 1024),
-      () => this.memory.checkRSS('memory_rss', 150 * 1024 * 1024),
-      () => this.disk.checkStorage('storage', { path: '/', thresholdPercent: 0.9 }),
-      () => this.prismaHealth.pingCheck('database', this.prisma as any),
-    ]);
+  async checkAll() {
+    return this.healthService.check();
+  }
+
+  @Get('telnyx')
+  @ApiOperation({ summary: 'Telnyx service health check' })
+  @ApiResponse({ status: 200, description: 'Telnyx service is healthy' })
+  @ApiResponse({ status: 503, description: 'Telnyx service is unhealthy' })
+  async checkTelnyx() {
+    const result = await this.healthService.check();
+    return {
+      telnyx: result.services.telnyx,
+    };
+  }
+
+  @Get('slack')
+  @ApiOperation({ summary: 'Slack service health check' })
+  @ApiResponse({ status: 200, description: 'Slack service is healthy' })
+  @ApiResponse({ status: 503, description: 'Slack service is unhealthy' })
+  async checkSlack() {
+    const result = await this.healthService.check();
+    return {
+      slack: result.services.slack,
+    };
   }
 }

@@ -38,6 +38,8 @@
     "@nestjs/terminus": "^10.2.0",
     "@prisma/client": "^5.7.1",
     "@prontoplus/feature-flags": "workspace:*",
+    "@slack/webhook": "^7.0.6",
+    "telnyx": "^2.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "configcat-node": "^11.4.1",

@@ -9,6 +9,7 @@ import { HealthModule } from './modules/health/health.module';
 import { UsersModule } from './modules/users/users.module';
 import { PracticesModule } from './modules/practices/practices.module';
 import { DemoModule } from './modules/demo/demo.module';
+import { TelnyxModule } from './modules/telnyx/telnyx.module';
 import { ConfigCatModule } from './config-cat/config-cat.module';
 import { loggerConfig } from './common/logger/logger.config';
 import { validate } from './config/env.validation';
@@ -28,6 +29,7 @@ import { validate } from './config/env.validation';
     UsersModule,
     PracticesModule,
     DemoModule,
+    TelnyxModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -25,6 +25,32 @@ export class EnvironmentVariables {
   @IsOptional()
   @IsIn(['error', 'warn', 'info', 'debug'])
   LOG_LEVEL?: string;
+
+  // Telnyx configuration
+  @IsOptional()
+  @IsString()
+  TELNYX_API_KEY?: string;
+
+  @IsOptional()
+  @IsString()
+  TELNYX_API_V2_KEY?: string;
+
+  @IsOptional()
+  @IsString()
+  TELNYX_PHONE_NUMBER?: string;
+
+  @IsOptional()
+  @IsString()
+  TELNYX_WEBHOOK_SECRET?: string;
+
+  @IsOptional()
+  @IsString()
+  NEXT_PUBLIC_DEMO_PHONE_NUMBER?: string;
+
+  // Slack configuration
+  @IsOptional()
+  @IsString()
+  SLACK_WEBHOOK_URL?: string;
 }
 
 export function validate(config: Record<string, unknown>) {

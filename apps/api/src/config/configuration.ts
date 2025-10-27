@@ -17,4 +17,14 @@ export default () => ({
     prefix: 'api/v1',
     version: '1.0.0',
   },
+  telnyx: {
+    apiKey: process.env.TELNYX_API_KEY,
+    apiV2Key: process.env.TELNYX_API_V2_KEY,
+    phoneNumber: process.env.TELNYX_PHONE_NUMBER,
+    webhookSecret: process.env.TELNYX_WEBHOOK_SECRET,
+    demoPhoneNumber: process.env.NEXT_PUBLIC_DEMO_PHONE_NUMBER,
+  },
+  slack: {
+    webhookUrl: process.env.SLACK_WEBHOOK_URL,
+  },
 });

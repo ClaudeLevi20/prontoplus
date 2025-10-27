@@ -1,0 +1,532 @@
+{
+  "test_plan_version": "1.0",
+  "total_scenarios": 52,
+  "execution_instructions": "Call the demo number and follow each scenario script. Rate each interaction 1-5 stars on response quality, accuracy, tone, and problem resolution.",
+  "categories": [
+    {
+      "category": "Greeting & Initial Contact",
+      "scenarios": [
+        {
+          "id": "G1",
+          "scenario": "Enthusiastic caller",
+          "script": "Hi! I'm so excited to call! I've heard great things about your practice!",
+          "expected_response": "Warm greeting, match enthusiasm, ask how they can help",
+          "success_criteria": "AI responds positively, doesn't seem robotic"
+        },
+        {
+          "id": "G2",
+          "scenario": "Casual caller",
+          "script": "Hey, what's up?",
+          "expected_response": "Professional but friendly response, guides conversation",
+          "success_criteria": "AI maintains professionalism while being approachable"
+        },
+        {
+          "id": "G3",
+          "scenario": "Silent caller (5 seconds)",
+          "script": "[Say nothing for 5 seconds]",
+          "expected_response": "AI prompts: 'Hello? Are you there? How can I help you?'",
+          "success_criteria": "AI handles silence gracefully"
+        },
+        {
+          "id": "G4",
+          "scenario": "Nervous caller",
+          "script": "Um, hi... I'm not sure if this is the right number...",
+          "expected_response": "Reassuring response, confirm they've reached the right place",
+          "success_criteria": "AI puts caller at ease"
+        },
+        {
+          "id": "G5",
+          "scenario": "Rushed caller",
+          "script": "Hi, I need to schedule something quickly, I'm in a hurry",
+          "expected_response": "Acknowledges urgency, offers to help efficiently",
+          "success_criteria": "AI adapts to caller's pace"
+        }
+      ]
+    },
+    {
+      "category": "Treatment Information",
+      "scenarios": [
+        {
+          "id": "T1",
+          "scenario": "Basic braces inquiry",
+          "script": "I'm interested in getting braces. Can you tell me about them?",
+          "expected_response": "Overview of braces types, ask about age, mention consultation",
+          "success_criteria": "Clear explanation, asks qualifying questions"
+        },
+        {
+          "id": "T2",
+          "scenario": "Invisalign vs braces comparison",
+          "script": "What's the difference between Invisalign and regular braces?",
+          "expected_response": "Compare visibility, comfort, cost, treatment time, candidacy",
+          "success_criteria": "Comprehensive comparison without bias"
+        },
+        {
+          "id": "T3",
+          "scenario": "Adult orthodontics inquiry",
+          "script": "I'm 35 years old. Is it too late for me to get braces?",
+          "expected_response": "Reassure that adult treatment is common, explain options",
+          "success_criteria": "Encouraging response, mentions adult-specific options"
+        },
+        {
+          "id": "T4",
+          "scenario": "Child's first consultation",
+          "script": "My 8-year-old needs braces. What should I expect?",
+          "expected_response": "Explain early treatment, what happens at consultation",
+          "success_criteria": "Age-appropriate explanation, mentions parent involvement"
+        },
+        {
+          "id": "T5",
+          "scenario": "Ceramic braces question",
+          "script": "Do you have clear braces that aren't so noticeable?",
+          "expected_response": "Explain ceramic braces, compare to metal, mention cost",
+          "success_criteria": "Accurate information about ceramic options"
+        },
+        {
+          "id": "T6",
+          "scenario": "Lingual braces inquiry",
+          "script": "I heard about braces that go behind your teeth. Do you do those?",
+          "expected_response": "Explain lingual braces, mention they're custom-made",
+          "success_criteria": "Knowledgeable about specialized treatment options"
+        },
+        {
+          "id": "T7",
+          "scenario": "Self-ligating braces",
+          "script": "What are Damon braces and how are they different?",
+          "expected_response": "Explain self-ligating system, benefits, treatment time",
+          "success_criteria": "Technical knowledge about specific brace types"
+        },
+        {
+          "id": "T8",
+          "scenario": "Retainer questions",
+          "script": "Will I need to wear retainers after treatment?",
+          "expected_response": "Explain retention phase, types of retainers, importance",
+          "success_criteria": "Emphasizes importance of retention"
+        },
+        {
+          "id": "T9",
+          "scenario": "Surgical orthodontics",
+          "script": "My dentist said I might need jaw surgery. Do you do that?",
+          "expected_response": "Explain surgical orthodontics, mention collaboration with surgeons",
+          "success_criteria": "Knowledgeable about complex cases"
+        },
+        {
+          "id": "T10",
+          "scenario": "Accelerated treatment",
+          "script": "Is there any way to make treatment faster?",
+          "expected_response": "Mention acceleration options, explain benefits and limitations",
+          "success_criteria": "Balanced explanation of acceleration methods"
+        },
+        {
+          "id": "T11",
+          "scenario": "Phase 1 treatment",
+          "script": "My 7-year-old's dentist said she needs early treatment. What does that mean?",
+          "expected_response": "Explain Phase 1 treatment, age-appropriate interventions",
+          "success_criteria": "Clear explanation of early treatment concepts"
+        },
+        {
+          "id": "T12",
+          "scenario": "Treatment timeline",
+          "script": "How long does orthodontic treatment usually take?",
+          "expected_response": "Give general timeline ranges, explain factors that affect duration",
+          "success_criteria": "Realistic expectations, explains variables"
+        },
+        {
+          "id": "T13",
+          "scenario": "Complex case inquiry",
+          "script": "I have a really complicated case. Can you handle it?",
+          "expected_response": "Reassure about experience with complex cases, suggest consultation",
+          "success_criteria": "Confident but not overpromising"
+        },
+        {
+          "id": "T14",
+          "scenario": "Second opinion",
+          "script": "I got a treatment plan from another orthodontist. Can you give me a second opinion?",
+          "expected_response": "Welcome second opinion, explain consultation process",
+          "success_criteria": "Professional approach to second opinions"
+        },
+        {
+          "id": "T15",
+          "scenario": "Treatment interruption",
+          "script": "I had braces before but didn't finish treatment. Can I restart?",
+          "expected_response": "Explain restart process, mention new evaluation needed",
+          "success_criteria": "Understanding of interrupted treatment scenarios"
+        }
+      ]
+    },
+    {
+      "category": "Pricing & Financial",
+      "scenarios": [
+        {
+          "id": "P1",
+          "scenario": "Direct cost question",
+          "script": "How much do braces cost?",
+          "expected_response": "Range ($3k-$7k), mention insurance, payment plans, consultation for exact quote",
+          "success_criteria": "Provides range, doesn't give exact price, offers consultation"
+        },
+        {
+          "id": "P2",
+          "scenario": "Insurance verification",
+          "script": "I have Delta Dental insurance. Will you accept it?",
+          "expected_response": "Yes, we accept Delta, typical coverage 50-85%, offer to verify benefits",
+          "success_criteria": "Confirms acceptance, offers verification service"
+        },
+        {
+          "id": "P3",
+          "scenario": "Payment plan inquiry",
+          "script": "Do you offer payment plans? I can't pay everything upfront.",
+          "expected_response": "Yes, flexible payment plans, 0% financing, CareCredit",
+          "success_criteria": "Reassuring about payment options"
+        },
+        {
+          "id": "P4",
+          "scenario": "Invisalign cost",
+          "script": "How much more expensive is Invisalign compared to braces?",
+          "expected_response": "Invisalign typically $4k-$8k, similar to ceramic braces",
+          "success_criteria": "Accurate cost comparison"
+        },
+        {
+          "id": "P5",
+          "scenario": "Family discount",
+          "script": "I have three kids who need braces. Do you give family discounts?",
+          "expected_response": "Yes, family discounts available, explain percentage savings",
+          "success_criteria": "Encourages family treatment"
+        },
+        {
+          "id": "P6",
+          "scenario": "Upfront payment discount",
+          "script": "If I pay everything upfront, do you give a discount?",
+          "expected_response": "Yes, 5-10% discount for upfront payment",
+          "success_criteria": "Mentions financial incentive"
+        },
+        {
+          "id": "P7",
+          "scenario": "FSA/HSA question",
+          "script": "Can I use my FSA account to pay for braces?",
+          "expected_response": "Yes, orthodontics eligible for FSA/HSA reimbursement",
+          "success_criteria": "Knowledgeable about tax-advantaged accounts"
+        },
+        {
+          "id": "P8",
+          "scenario": "CareCredit inquiry",
+          "script": "Do you accept CareCredit?",
+          "expected_response": "Yes, CareCredit accepted, mention promotional financing",
+          "success_criteria": "Familiar with third-party financing"
+        },
+        {
+          "id": "P9",
+          "scenario": "Consultation cost",
+          "script": "How much does the consultation cost?",
+          "expected_response": "Consultation typically free, small fee if records needed",
+          "success_criteria": "Clear about consultation pricing"
+        },
+        {
+          "id": "P10",
+          "scenario": "Insurance coverage percentage",
+          "script": "What percentage does insurance usually cover?",
+          "expected_response": "Most plans cover 50-85%, varies by plan and age",
+          "success_criteria": "Realistic coverage expectations"
+        },
+        {
+          "id": "P11",
+          "scenario": "Deductible question",
+          "script": "What about deductibles? How much will I pay out of pocket?",
+          "expected_response": "Explain deductible concept, offer to verify benefits",
+          "success_criteria": "Helps caller understand financial responsibility"
+        },
+        {
+          "id": "P12",
+          "scenario": "Out-of-network benefits",
+          "script": "Are you in-network with my insurance?",
+          "expected_response": "Check network status, explain out-of-network benefits",
+          "success_criteria": "Honest about network participation"
+        },
+        {
+          "id": "P13",
+          "scenario": "Secondary insurance",
+          "script": "I have coverage through both parents. Can you use both?",
+          "expected_response": "Yes, coordinate benefits to maximize coverage",
+          "success_criteria": "Knowledgeable about dual coverage"
+        },
+        {
+          "id": "P14",
+          "scenario": "Age limit coverage",
+          "script": "My insurance says there's an age limit. Is that true?",
+          "expected_response": "Many plans have age limits, typically 19, some cover adults",
+          "success_criteria": "Accurate about age restrictions"
+        },
+        {
+          "id": "P15",
+          "scenario": "Lifetime maximum",
+          "script": "What's a lifetime maximum and how does it work?",
+          "expected_response": "Explain lifetime maximum concept, typical amounts",
+          "success_criteria": "Clear explanation of insurance terms"
+        }
+      ]
+    },
+    {
+      "category": "Appointment Scheduling",
+      "scenarios": [
+        {
+          "id": "A1",
+          "scenario": "Schedule consultation",
+          "script": "I'd like to schedule a consultation for my daughter.",
+          "expected_response": "Ask age, availability, mention free consultation, provide time slots",
+          "success_criteria": "Captures intent, asks qualifying questions, proposes times"
+        },
+        {
+          "id": "A2",
+          "scenario": "Urgent appointment",
+          "script": "I need to see someone this week if possible.",
+          "expected_response": "Check availability, offer earliest slots, explain urgency process",
+          "success_criteria": "Accommodates urgent requests"
+        },
+        {
+          "id": "A3",
+          "scenario": "Evening appointment",
+          "script": "Do you have any evening appointments? I work during the day.",
+          "expected_response": "Mention evening hours, offer specific times",
+          "success_criteria": "Accommodates working patients"
+        },
+        {
+          "id": "A4",
+          "scenario": "Saturday appointment",
+          "script": "Can I come in on Saturday?",
+          "expected_response": "Confirm Saturday hours, offer available times",
+          "success_criteria": "Knowledgeable about weekend availability"
+        },
+        {
+          "id": "A5",
+          "scenario": "Cancel appointment",
+          "script": "I need to cancel my appointment next Tuesday.",
+          "expected_response": "Acknowledge cancellation, ask for rescheduling, mention policy",
+          "success_criteria": "Handles cancellation professionally"
+        },
+        {
+          "id": "A6",
+          "scenario": "Reschedule appointment",
+          "script": "Can I move my appointment to next week instead?",
+          "expected_response": "Help with rescheduling, check availability, confirm new time",
+          "success_criteria": "Efficient rescheduling process"
+        },
+        {
+          "id": "A7",
+          "scenario": "Group appointment",
+          "script": "Can I schedule appointments for both my kids at the same time?",
+          "expected_response": "Try to accommodate, explain if not possible, offer alternatives",
+          "success_criteria": "Attempts to accommodate family needs"
+        },
+        {
+          "id": "A8",
+          "scenario": "Records appointment",
+          "script": "I need to schedule my records appointment.",
+          "expected_response": "Explain records process, schedule appropriate time slot",
+          "success_criteria": "Knowledgeable about records appointment"
+        },
+        {
+          "id": "A9",
+          "scenario": "Adjustment appointment",
+          "script": "When is my next adjustment appointment?",
+          "expected_response": "Check schedule, explain typical adjustment frequency",
+          "success_criteria": "Access to appointment information"
+        },
+        {
+          "id": "A10",
+          "scenario": "Virtual consultation",
+          "script": "Can I do a virtual consultation instead of coming in?",
+          "expected_response": "Explain virtual options, limitations, offer in-person benefits",
+          "success_criteria": "Knowledgeable about virtual services"
+        }
+      ]
+    },
+    {
+      "category": "Emergency Situations",
+      "scenarios": [
+        {
+          "id": "E1",
+          "scenario": "Broken bracket",
+          "script": "Help! My bracket just broke off!",
+          "expected_response": "Stay calm, not urgent, schedule repair in 1-2 days, temporary wax solution",
+          "success_criteria": "Calming tone, appropriate urgency level, actionable advice"
+        },
+        {
+          "id": "E2",
+          "scenario": "Severe pain",
+          "script": "I'm in really bad pain from my braces!",
+          "expected_response": "Sympathetic, ask about type of pain, offer same-day appointment or immediate callback",
+          "success_criteria": "Escalates appropriately, shows empathy"
+        },
+        {
+          "id": "E3",
+          "scenario": "Poking wire",
+          "script": "There's a wire poking my cheek and it hurts!",
+          "expected_response": "Offer immediate relief tips, schedule repair appointment",
+          "success_criteria": "Provides immediate help, schedules follow-up"
+        },
+        {
+          "id": "E4",
+          "scenario": "Lost aligner",
+          "script": "I lost my Invisalign aligner! What do I do?",
+          "expected_response": "Use previous aligner, call to order replacement, don't skip ahead",
+          "success_criteria": "Clear instructions for aligner loss"
+        },
+        {
+          "id": "E5",
+          "scenario": "Swollen gums",
+          "script": "My gums are really swollen around my braces.",
+          "expected_response": "Rinse with salt water, schedule cleaning appointment, check oral hygiene",
+          "success_criteria": "Addresses gum health appropriately"
+        },
+        {
+          "id": "E6",
+          "scenario": "Loose bands",
+          "script": "My rubber bands keep falling off.",
+          "expected_response": "Schedule replacement appointment, explain importance of compliance",
+          "success_criteria": "Handles compliance issues professionally"
+        }
+      ]
+    },
+    {
+      "category": "Escalation & Transfer",
+      "scenarios": [
+        {
+          "id": "ES1",
+          "scenario": "Request human",
+          "script": "I'd like to speak with a real person, please.",
+          "expected_response": "Polite acknowledgment, offer to help first or transfer, take callback info",
+          "success_criteria": "Doesn't argue, respects request, offers alternatives"
+        },
+        {
+          "id": "ES2",
+          "scenario": "Complex billing question",
+          "script": "I have a question about my bill that's very complicated.",
+          "expected_response": "Acknowledge complexity, offer to transfer to billing specialist",
+          "success_criteria": "Recognizes limitations, offers appropriate escalation"
+        },
+        {
+          "id": "ES3",
+          "scenario": "Complaint about treatment",
+          "script": "I'm not happy with how my treatment is going.",
+          "expected_response": "Show empathy, offer to transfer to doctor or manager",
+          "success_criteria": "Handles complaints sensitively"
+        },
+        {
+          "id": "ES4",
+          "scenario": "Medical emergency",
+          "script": "I think I'm having a medical emergency related to my braces!",
+          "expected_response": "Immediate escalation, provide emergency contact, stay on line",
+          "success_criteria": "Recognizes true emergency, escalates immediately"
+        },
+        {
+          "id": "ES5",
+          "scenario": "Technical questions",
+          "script": "I have a very technical question about my treatment that only a doctor can answer.",
+          "expected_response": "Acknowledge limitation, offer to transfer to doctor",
+          "success_criteria": "Knows when to defer to clinical expertise"
+        }
+      ]
+    },
+    {
+      "category": "Edge Cases",
+      "scenarios": [
+        {
+          "id": "EC1",
+          "scenario": "Background noise (kids screaming)",
+          "script": "[Have kids screaming in background] 'Sorry, it's chaotic here. I need to schedule...'",
+          "expected_response": "Acknowledges noise politely, asks caller to repeat if needed",
+          "success_criteria": "Handles noise gracefully, doesn't get confused"
+        },
+        {
+          "id": "EC2",
+          "scenario": "Heavy accent",
+          "script": "[Use heavy accent] 'I want braces for my son'",
+          "expected_response": "Understands or politely asks for clarification",
+          "success_criteria": "AI comprehension or appropriate clarification requests"
+        },
+        {
+          "id": "EC3",
+          "scenario": "Very quiet speaker",
+          "script": "[Speak very quietly] 'Hello, I need to schedule an appointment'",
+          "expected_response": "Asks caller to speak up, remains patient",
+          "success_criteria": "Handles volume issues appropriately"
+        },
+        {
+          "id": "EC4",
+          "scenario": "Fast speaker",
+          "script": "[Speak very quickly] 'HiIneedtoscheduleanappointmentformysonnextweek'",
+          "expected_response": "Asks caller to slow down, repeats back what understood",
+          "success_criteria": "Manages pace differences"
+        },
+        {
+          "id": "EC5",
+          "scenario": "Multiple questions at once",
+          "script": "How much do braces cost and do you take insurance and when can I schedule and what about Invisalign?",
+          "expected_response": "Addresses one question at a time, asks to focus on most important",
+          "success_criteria": "Manages overwhelming input"
+        },
+        {
+          "id": "EC6",
+          "scenario": "Off-topic question",
+          "script": "What's the weather like today?",
+          "expected_response": "Politely redirects to orthodontic topics",
+          "success_criteria": "Stays focused on practice business"
+        },
+        {
+          "id": "EC7",
+          "scenario": "Wrong number",
+          "script": "Is this the pizza place?",
+          "expected_response": "Politely corrects, identifies as orthodontic practice",
+          "success_criteria": "Handles wrong numbers gracefully"
+        },
+        {
+          "id": "EC8",
+          "scenario": "Prank call",
+          "script": "I want braces for my dog.",
+          "expected_response": "Politely explains services are for humans, offers to help with human family members",
+          "success_criteria": "Handles pranks professionally"
+        },
+        {
+          "id": "EC9",
+          "scenario": "Very long call",
+          "script": "[Have a 10+ minute conversation asking many questions]",
+          "expected_response": "Maintains engagement, offers to schedule consultation for detailed discussion",
+          "success_criteria": "Manages long conversations appropriately"
+        },
+        {
+          "id": "EC10",
+          "scenario": "Caller with speech impediment",
+          "script": "[Simulate speech impediment] 'I need braces'",
+          "expected_response": "Patient, asks for clarification if needed, doesn't rush",
+          "success_criteria": "Accommodates speech differences"
+        },
+        {
+          "id": "EC11",
+          "scenario": "Caller crying",
+          "script": "[Simulate crying] 'I'm so embarrassed about my teeth'",
+          "expected_response": "Shows empathy, reassures about treatment options, offers support",
+          "success_criteria": "Handles emotional situations with sensitivity"
+        },
+        {
+          "id": "EC12",
+          "scenario": "Angry caller",
+          "script": "I'm really frustrated with this whole process!",
+          "expected_response": "Acknowledges frustration, offers to help resolve issues",
+          "success_criteria": "De-escalates anger appropriately"
+        }
+      ]
+    }
+  ],
+  "rating_criteria": {
+    "response_quality": "1-5 stars: Was the response helpful and complete?",
+    "accuracy": "1-5 stars: Was the information correct?",
+    "naturalness": "1-5 stars: Did it sound like a human conversation?",
+    "professionalism": "1-5 stars: Was the tone appropriate?",
+    "problem_resolution": "1-5 stars: Did the AI solve the caller's need?"
+  },
+  "target_metrics": {
+    "average_score": "4.0+",
+    "response_time": "<2 seconds",
+    "call_completion_rate": ">95%",
+    "knowledge_accuracy": ">90%",
+    "escalation_appropriateness": "100%"
+  }
+}

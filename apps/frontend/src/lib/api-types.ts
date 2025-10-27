@@ -33,3 +33,54 @@ export interface ApiErrorResponse {
   message: string;
   error?: string;
 }
+
+// Telnyx Call Types
+export interface Call {
+  id: string;
+  phoneNumber?: string;
+  callerName?: string;
+  callDuration: number;
+  recordingUrl?: string;
+  transcriptUrl?: string;
+  status: CallStatus;
+  telnyxCallId: string;
+  telnyxCallControlId?: string;
+  direction: CallDirection;
+  startedAt: string;
+  answeredAt?: string;
+  endedAt?: string;
+  metadata?: any;
+  createdAt: string;
+  updatedAt: string;
+  demoLead?: DemoLead;
+}
+
+export interface DemoLead {
+  id: string;
+  callId: string;
+  callerPhone?: string;
+  email?: string;
+  name?: string;
+  practiceName?: string;
+  interestLevel?: LeadInterest;
+  notes?: string;
+  captured: boolean;
+  capturedAt?: string;
+  followUpSent: boolean;
+  createdAt: string;
+  updatedAt: string;
+  call?: Call;
+}
+
+export type CallStatus = 
+  | 'INITIATED'
+  | 'RINGING'
+  | 'ANSWERED'
+  | 'COMPLETED'
+  | 'FAILED'
+  | 'BUSY'
+  | 'NO_ANSWER';
+
+export type CallDirection = 'INBOUND' | 'OUTBOUND';
+
+export type LeadInterest = 'HOT' | 'WARM' | 'COLD' | 'UNQUALIFIED';

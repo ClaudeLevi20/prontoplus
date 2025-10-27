@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Moon, Sun, Menu, X, Phone } from 'lucide-react';
 import { Button } from '@prontoplus/ui';
 
 export function Header() {
@@ -47,7 +47,16 @@ export function Header() {
         </nav>
 
         {/* Right Section */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-4">
+          {/* Demo Phone Number */}
+          <a 
+            href={`tel:${process.env.NEXT_PUBLIC_DEMO_PHONE_NUMBER || '+15551234567'}`}
+            className="hidden md:flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+          >
+            <Phone className="h-4 w-4 mr-1" />
+            Demo: {process.env.NEXT_PUBLIC_DEMO_PHONE_NUMBER || '(555) 123-4567'}
+          </a>
+
           {/* Theme Toggle */}
           <Button
             variant="ghost"
