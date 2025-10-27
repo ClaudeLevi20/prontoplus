@@ -63,7 +63,7 @@ export default function DemoScenarios() {
             >
               <div className="text-4xl mb-3">{scenario.icon}</div>
               <h3 className="font-semibold text-gray-900 mb-2">
-                "{scenario.question}"
+                &ldquo;{scenario.question}&rdquo;
               </h3>
               <p className="text-sm text-gray-600 italic">
                 {scenario.response}
