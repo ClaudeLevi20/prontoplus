@@ -3,10 +3,19 @@ import DailyRotateFile from 'winston-daily-rotate-file';
 import * as path from 'path';
 import * as fs from 'fs';
 
-// Ensure logs directory exists
-const logDir = path.join(process.cwd(), 'logs');
-if (!fs.existsSync(logDir)) {
-  fs.mkdirSync(logDir, { recursive: true });
+// Use /tmp for logs in production (Railway has read-only filesystem)
+// Use local logs directory in development
+const logDir = process.env.NODE_ENV === 'production' 
+  ? '/tmp/logs' 
+  : path.join(process.cwd(), 'logs');
+
+// Ensure logs directory exists (skip if not writable)
+try {
+  if (!fs.existsSync(logDir)) {
+    fs.mkdirSync(logDir, { recursive: true });
+  }
+} catch (error) {
+  console.warn('Could not create logs directory:', error.message);
 }
 
 export const loggerConfig = {
@@ -42,8 +51,9 @@ export const loggerConfig = {
   ] as winston.transport[],
 };
 
-// Add file transports in production
-if (process.env.NODE_ENV === 'production') {
+// Add file transports only in development
+// Railway captures console logs automatically in production
+if (process.env.NODE_ENV !== 'production') {
   (loggerConfig.transports as winston.transport[]).push(
     // Error log file with daily rotation
     new DailyRotateFile({
