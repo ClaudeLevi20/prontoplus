@@ -1,6 +1,6 @@
 'use client';
 
-import { FeatureFlags } from '@prontoplus/feature-flags';
+// import { FeatureFlags } from '@prontoplus/feature-flags';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, Badge } from '@prontoplus/ui';
 import { Sparkles, CheckCircle2 } from 'lucide-react';
 
@@ -54,7 +54,8 @@ export function DemoSection() {
             <p className="text-xs font-medium text-muted-foreground mb-1">Current Flag Status</p>
             <div className="flex items-center gap-2">
               <code className="text-xs font-mono bg-background px-2 py-1 rounded">
-                {FeatureFlags.DEMO_ENABLED}
+                {/* FeatureFlags.DEMO_ENABLED */}
+                pronto_demo_enabled
               </code>
               <Badge variant="default" className="text-xs">Enabled</Badge>
             </div>
