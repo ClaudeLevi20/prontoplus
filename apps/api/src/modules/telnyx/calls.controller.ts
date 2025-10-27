@@ -32,7 +32,7 @@ import { Call, DemoLead, LeadInterest } from '@prisma/client';
  * - Lead management
  */
 @ApiTags('calls')
-@Controller('api/v1/telnyx')
+@Controller('telnyx')
 export class CallsController {
   private readonly logger = new Logger(CallsController.name);
 
