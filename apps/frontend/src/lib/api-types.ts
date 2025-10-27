@@ -67,6 +67,17 @@ export interface DemoLead {
   captured: boolean;
   capturedAt?: string;
   followUpSent: boolean;
+  
+  // Lead Scoring Fields
+  leadScore: number;
+  leadQuality?: string;
+  sentimentScore?: number;
+  questionsAsked: string[];
+  mentionedPricing: boolean;
+  mentionedInsurance: boolean;
+  mentionedScheduling: boolean;
+  qualificationNotes?: string;
+  
   createdAt: string;
   updatedAt: string;
   call?: Call;
