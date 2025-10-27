@@ -223,11 +223,11 @@ class ApiClient {
     }> => 
       this.get('/telnyx/calls', { 
         params: filters as Record<string, string | number | boolean>,
-        requiresAuth: true 
+        requiresAuth: false // Demo mode - no auth required
       }),
     
     getById: (id: string): Promise<Call> => 
-      this.get<Call>(`/telnyx/calls/${id}`, { requiresAuth: true }),
+      this.get<Call>(`/telnyx/calls/${id}`, { requiresAuth: false }),
     
     getAnalytics: (filters?: {
       startDate?: string;
@@ -253,7 +253,7 @@ class ApiClient {
     }> => 
       this.get('/telnyx/analytics', { 
         params: filters as Record<string, string | number | boolean>,
-        requiresAuth: true 
+        requiresAuth: false // Demo mode - no auth required
       }),
   };
 
@@ -269,11 +269,11 @@ class ApiClient {
     }> => 
       this.get('/telnyx/leads', { 
         params: filters as Record<string, string | number | boolean>,
-        requiresAuth: true 
+        requiresAuth: false // Demo mode - no auth required
       }),
     
     updateInterest: (leadId: string, interestLevel: string): Promise<DemoLead> => 
-      this.patch<DemoLead>(`/telnyx/leads/${leadId}`, { interestLevel }, { requiresAuth: true }),
+      this.patch<DemoLead>(`/telnyx/leads/${leadId}`, { interestLevel }, { requiresAuth: false }),
   };
 }
 
