@@ -10,9 +10,9 @@ import { UsersModule } from './modules/users/users.module';
 import { PracticesModule } from './modules/practices/practices.module';
 import { DemoModule } from './modules/demo/demo.module';
 import { TelnyxModule } from './modules/telnyx/telnyx.module';
-import { ConfigCatModule } from './config-cat/config-cat.module';
+import { TestModule } from './modules/test/test.module';
 import { loggerConfig } from './common/logger/logger.config';
-import { validate } from './config/env.validation';
+// Force deployment
 
 @Module({
   imports: [
@@ -30,6 +30,7 @@ import { validate } from './config/env.validation';
     PracticesModule,
     DemoModule,
     TelnyxModule,
+    TestModule,
   ],
   controllers: [AppController],
   providers: [AppService],

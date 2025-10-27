@@ -1,0 +1,105 @@
+{
+  "category": "emergency",
+  "scenarios": [
+    {
+      "id": "emergency-001",
+      "name": "Broken Bracket",
+      "category": "emergency",
+      "questions": ["Help! My bracket just broke off!"],
+      "expectedBehavior": "Stay calm, not urgent, schedule repair in 1-2 days, temporary wax solution",
+      "expectedAnswers": ["Calming reassurance", "Repair scheduling", "Temporary solution"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "emergency-002",
+      "name": "Severe Pain",
+      "category": "emergency",
+      "questions": ["I'm in really bad pain from my braces!"],
+      "expectedBehavior": "Sympathetic, ask about type of pain, offer same-day appointment or immediate callback",
+      "expectedAnswers": ["Sympathetic response", "Pain clarification", "Appointment offer"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "emergency-003",
+      "name": "Poking Wire",
+      "category": "emergency",
+      "questions": ["There's a wire poking my cheek and it hurts!"],
+      "expectedBehavior": "Offer immediate relief tips, schedule repair appointment",
+      "expectedAnswers": ["Relief tips", "Repair scheduling"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "emergency-004",
+      "name": "Lost Aligner",
+      "category": "emergency",
+      "questions": ["I lost my Invisalign aligner! What do I do?"],
+      "expectedBehavior": "Use previous aligner, call to order replacement, don't skip ahead",
+      "expectedAnswers": ["Previous aligner advice", "Replacement order process"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "emergency-005",
+      "name": "Swollen Gums",
+      "category": "emergency",
+      "questions": ["My gums are really swollen around my braces."],
+      "expectedBehavior": "Rinse with salt water, schedule cleaning appointment, check oral hygiene",
+      "expectedAnswers": ["Home remedy instructions", "Cleaning appointment", "Hygiene check"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "emergency-006",
+      "name": "Loose Bands",
+      "category": "emergency",
+      "questions": ["My rubber bands keep falling off."],
+      "expectedBehavior": "Schedule replacement appointment, explain importance of compliance",
+      "expectedAnswers": ["Replacement scheduling", "Compliance importance"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "emergency-007",
+      "name": "Request Human",
+      "category": "emergency",
+      "questions": ["I'd like to speak with a real person, please."],
+      "expectedBehavior": "Polite acknowledgment, offer to help first or transfer, take callback information",
+      "expectedAnswers": ["Polite acknowledgment", "Transfer option", "Information capture"],
+      "expectedDuration": 30
+    },
+    {
+      "id": "emergency-008",
+      "name": "Complex Billing Question",
+      "category": "emergency",
+      "questions": ["I have a question about my bill that's very complicated."],
+      "expectedBehavior": "Acknowledge complexity, offer to transfer to billing specialist",
+      "expectedAnswers": ["Complexity acknowledgment", "Transfer offer"],
+      "expectedDuration": 30
+    },
+    {
+      "id": "emergency-009",
+      "name": "Complaint About Treatment",
+      "category": "emergency",
+      "questions": ["I'm not happy with how my treatment is going."],
+      "expectedBehavior": "Show empathy, offer to transfer to doctor or manager",
+      "expectedAnswers": ["Empathetic response", "Transfer offer"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "emergency-010",
+      "name": "Medical Emergency",
+      "category": "emergency",
+      "questions": ["I think I'm having a medical emergency related to my braces!"],
+      "expectedBehavior": "Immediate escalation, provide emergency contact, stay on line",
+      "expectedAnswers": ["Immediate escalation", "Emergency contact info"],
+      "expectedDuration": 30
+    },
+    {
+      "id": "emergency-011",
+      "name": "Technical Questions",
+      "category": "emergency",
+      "questions": ["I have a very technical question about my treatment that only a doctor can answer."],
+      "expectedBehavior": "Acknowledge limitation, offer to transfer to doctor",
+      "expectedAnswers": ["Limitation acknowledgment", "Transfer offer"],
+      "expectedDuration": 30
+    }
+  ]
+}
+

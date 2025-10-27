@@ -1,0 +1,141 @@
+{
+  "category": "information",
+  "scenarios": [
+    {
+      "id": "info-001",
+      "name": "Basic Braces Inquiry",
+      "category": "information",
+      "questions": ["I'm interested in getting braces. Can you tell me about them?"],
+      "expectedBehavior": "Overview of braces types, ask about age, mention consultation",
+      "expectedAnswers": ["Braces overview", "Age question"],
+      "expectedDuration": 45
+    },
+    {
+      "id": "info-002",
+      "name": "Invisalign vs Braces",
+      "category": "information",
+      "questions": ["What's the difference between Invisalign and regular braces?"],
+      "expectedBehavior": "Compare visibility, comfort, cost, treatment time, candidacy",
+      "expectedAnswers": ["Comparison points", "Benefits of each"],
+      "expectedDuration": 60
+    },
+    {
+      "id": "info-003",
+      "name": "Adult Orthodontics",
+      "category": "information",
+      "questions": ["I'm 35 years old. Is it too late for me to get braces?"],
+      "expectedBehavior": "Reassure that adult treatment is common, explain options",
+      "expectedAnswers": ["Adult treatment reassurance", "Treatment options"],
+      "expectedDuration": 45
+    },
+    {
+      "id": "info-004",
+      "name": "Child First Consultation",
+      "category": "information",
+      "questions": ["My 8-year-old needs braces. What should I expect?"],
+      "expectedBehavior": "Explain early treatment, what happens at consultation",
+      "expectedAnswers": ["Early treatment explanation", "Consultation process"],
+      "expectedDuration": 50
+    },
+    {
+      "id": "info-005",
+      "name": "Ceramic Braces",
+      "category": "information",
+      "questions": ["Do you have clear braces that aren't so noticeable?"],
+      "expectedBehavior": "Explain ceramic braces, compare to metal, mention cost",
+      "expectedAnswers": ["Ceramic braces info", "Cost comparison"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "info-006",
+      "name": "Lingual Braces",
+      "category": "information",
+      "questions": ["I heard about braces that go behind your teeth. Do you do those?"],
+      "expectedBehavior": "Explain lingual braces, mention they're custom-made",
+      "expectedAnswers": ["Lingual braces explanation", "Custom-made mention"],
+      "expectedDuration": 45
+    },
+    {
+      "id": "info-007",
+      "name": "Self-Ligating Braces",
+      "category": "information",
+      "questions": ["What are Damon braces and how are they different?"],
+      "expectedBehavior": "Explain self-ligating system, benefits, treatment time",
+      "expectedAnswers": ["Self-ligating explanation", "Benefits"],
+      "expectedDuration": 50
+    },
+    {
+      "id": "info-008",
+      "name": "Retainer Questions",
+      "category": "information",
+      "questions": ["Will I need to wear retainers after treatment?"],
+      "expectedBehavior": "Explain retention phase, types of retainers, importance",
+      "expectedAnswers": ["Retention phase info", "Retainer importance"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "info-009",
+      "name": "Surgical Orthodontics",
+      "category": "information",
+      "questions": ["My dentist said I might need jaw surgery. Do you do that?"],
+      "expectedBehavior": "Explain surgical orthodontics, mention collaboration with surgeons",
+      "expectedAnswers": ["Surgical orthodontics explanation", "Surgeon collaboration"],
+      "expectedDuration": 45
+    },
+    {
+      "id": "info-010",
+      "name": "Accelerated Treatment",
+      "category": "information",
+      "questions": ["Is there any way to make treatment faster?"],
+      "expectedBehavior": "Mention acceleration options, explain benefits and limitations",
+      "expectedAnswers": ["Acceleration options", "Benefits and limitations"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "info-011",
+      "name": "Phase 1 Treatment",
+      "category": "information",
+      "questions": ["My 7-year-old's dentist said she needs early treatment. What does that mean?"],
+      "expectedBehavior": "Explain Phase 1 treatment, age-appropriate interventions",
+      "expectedAnswers": ["Phase 1 explanation", "Age-appropriate info"],
+      "expectedDuration": 50
+    },
+    {
+      "id": "info-012",
+      "name": "Treatment Timeline",
+      "category": "information",
+      "questions": ["How long does orthodontic treatment usually take?"],
+      "expectedBehavior": "Give general timeline ranges, explain factors that affect duration",
+      "expectedAnswers": ["Timeline range", "Duration factors"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "info-013",
+      "name": "Complex Case Inquiry",
+      "category": "information",
+      "questions": ["I have a really complicated case. Can you handle it?"],
+      "expectedBehavior": "Reassure about experience with complex cases, suggest consultation",
+      "expectedAnswers": ["Experience reassurance", "Consultation suggestion"],
+      "expectedDuration": 30
+    },
+    {
+      "id": "info-014",
+      "name": "Second Opinion",
+      "category": "information",
+      "questions": ["I got a treatment plan from another orthodontist. Can you give me a second opinion?"],
+      "expectedBehavior": "Welcome second opinion, explain consultation process",
+      "expectedAnswers": ["Second opinion welcome", "Consultation process"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "info-015",
+      "name": "Treatment Interruption",
+      "category": "information",
+      "questions": ["I had braces before but didn't finish treatment. Can I restart?"],
+      "expectedBehavior": "Explain restart process, mention new evaluation needed",
+      "expectedAnswers": ["Restart process", "New evaluation mention"],
+      "expectedDuration": 40
+    }
+  ]
+}
+

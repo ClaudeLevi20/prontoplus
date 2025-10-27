@@ -167,3 +167,77 @@ enum LeadInterest {
   COLD
   UNQUALIFIED
 }
+
+model TestRun {
+  id            String   @id @default(cuid())
+  name          String
+  status        TestRunStatus @default(RUNNING)
+  scenariosRun  Int      @default(0)
+  scenariosTotal Int
+  startedAt     DateTime @default(now())
+  completedAt   DateTime?
+  summary       Json?    // aggregated metrics
+  createdAt     DateTime @default(now())
+  
+  testResults   TestResult[]
+  
+  @@map("test_runs")
+  @@index([status])
+  @@index([startedAt])
+}
+
+model TestResult {
+  id              String   @id @default(cuid())
+  testRunId       String
+  scenarioId      String
+  scenarioName    String
+  category        String
+  
+  // Call data
+  twilioCallSid   String?
+  telnyxCallId    String?
+  recordingUrl    String?
+  transcriptText  String?  @db.Text
+  
+  // Performance metrics
+  callDuration          Int      // seconds
+  initialResponseTime   Int?     // milliseconds
+  avgResponseTime       Int?     // milliseconds
+  maxResponseTime       Int?     // milliseconds
+  awkwardPauses         Int      @default(0)
+  
+  // Quality scores (1-5)
+  naturalness           Float?
+  professionalism       Float?
+  accuracy              Float?
+  
+  // Analysis
+  correctAnswers        Int      @default(0)
+  incorrectAnswers      Int      @default(0)
+  hallucinations        String[] @default([])
+  inaccuracies          String[] @default([])
+  errors                String[] @default([])
+  interruptions         Int      @default(0)
+  
+  // AI evaluation
+  aiEvaluation          Json?    // detailed GPT-4 analysis
+  recommendations       String[] @default([])
+  
+  passed                Boolean  @default(false)
+  createdAt             DateTime @default(now())
+  
+  testRun TestRun @relation(fields: [testRunId], references: [id], onDelete: Cascade)
+  
+  @@map("test_results")
+  @@index([testRunId])
+  @@index([scenarioId])
+  @@index([category])
+  @@index([passed])
+}
+
+enum TestRunStatus {
+  RUNNING
+  COMPLETED
+  FAILED
+  CANCELLED
+}

@@ -1,0 +1,114 @@
+{
+  "category": "edge-case",
+  "scenarios": [
+    {
+      "id": "edge-001",
+      "name": "Background Noise",
+      "category": "edge-case",
+      "questions": ["Sorry, it's chaotic here. I need to schedule..."],
+      "expectedBehavior": "Acknowledges noise politely, asks caller to repeat if needed",
+      "expectedAnswers": ["Noise acknowledgment", "Repetition request"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "edge-002",
+      "name": "Heavy Accent",
+      "category": "edge-case",
+      "questions": ["I want braces for my son"],
+      "expectedBehavior": "Understands or politely asks for clarification",
+      "expectedAnswers": ["Understanding attempt", "Clarification request if needed"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "edge-003",
+      "name": "Very Quiet Speaker",
+      "category": "edge-case",
+      "questions": ["Hello, I need to schedule an appointment"],
+      "expectedBehavior": "Asks caller to speak up, remains patient",
+      "expectedAnswers": ["Volume request", "Patient response"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "edge-004",
+      "name": "Fast Speaker",
+      "category": "edge-case",
+      "questions": ["HiIneedtoscheduleanappointmentformysonnextweek"],
+      "expectedBehavior": "Asks caller to slow down, repeats back what understood",
+      "expectedAnswers": ["Pace request", "Confirmation of understanding"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "edge-005",
+      "name": "Multiple Questions at Once",
+      "category": "edge-case",
+      "questions": ["How much do braces cost and do you take insurance and when can I schedule and what about Invisalign?"],
+      "expectedBehavior": "Addresses one question at a time, asks to focus on most important",
+      "expectedAnswers": ["One question at a time", "Focus request"],
+      "expectedDuration": 50
+    },
+    {
+      "id": "edge-006",
+      "name": "Off-Topic Question",
+      "category": "edge-case",
+      "questions": ["What's the weather like today?"],
+      "expectedBehavior": "Politely redirects to orthodontic topics",
+      "expectedAnswers": ["Redirection", "Orthodontic focus"],
+      "expectedDuration": 25
+    },
+    {
+      "id": "edge-007",
+      "name": "Wrong Number",
+      "category": "edge-case",
+      "questions": ["Is this the pizza place?"],
+      "expectedBehavior": "Politely corrects, identifies as orthodontic practice",
+      "expectedAnswers": ["Correction", "Practice identification"],
+      "expectedDuration": 25
+    },
+    {
+      "id": "edge-008",
+      "name": "Prank Call",
+      "category": "edge-case",
+      "questions": ["I want braces for my dog."],
+      "expectedBehavior": "Politely explains services are for humans, offers to help with human family members",
+      "expectedAnswers": ["Politeness maintenance", "Human service clarification"],
+      "expectedDuration": 30
+    },
+    {
+      "id": "edge-009",
+      "name": "Very Long Call",
+      "category": "edge-case",
+      "questions": ["Multiple questions in one conversation"],
+      "expectedBehavior": "Maintains engagement, offers to schedule consultation for detailed discussion",
+      "expectedAnswers": ["Continued engagement", "Consultation suggestion"],
+      "expectedDuration": 300
+    },
+    {
+      "id": "edge-010",
+      "name": "Caller with Speech Impediment",
+      "category": "edge-case",
+      "questions": ["I need braces"],
+      "expectedBehavior": "Patient, asks for clarification if needed, doesn't rush",
+      "expectedAnswers": ["Patience demonstrated", "Clarification attempts"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "edge-011",
+      "name": "Caller Crying",
+      "category": "edge-case",
+      "questions": ["I'm so embarrassed about my teeth"],
+      "expectedBehavior": "Shows empathy, reassures about treatment options, offers support",
+      "expectedAnswers": ["Empathetic response", "Reassurance", "Support offer"],
+      "expectedDuration": 45
+    },
+    {
+      "id": "edge-012",
+      "name": "Angry Caller",
+      "category": "edge-case",
+      "questions": ["I'm really frustrated with this whole process!"],
+      "expectedBehavior": "Acknowledges frustration, offers to help resolve issues",
+      "expectedAnswers": ["Frustration acknowledgment", "Issue resolution offer"],
+      "expectedDuration": 40
+    }
+  ]
+}
+

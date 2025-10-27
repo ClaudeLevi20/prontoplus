@@ -1,0 +1,51 @@
+{
+  "category": "greeting",
+  "scenarios": [
+    {
+      "id": "greeting-001",
+      "name": "Enthusiastic Caller",
+      "category": "greeting",
+      "questions": ["Hi! I'm so excited to call!"],
+      "expectedBehavior": "Warm greeting, match enthusiasm, ask how they can help",
+      "expectedAnswers": ["Warm acknowledgment", "Offer to help"],
+      "expectedDuration": 30
+    },
+    {
+      "id": "greeting-002",
+      "name": "Casual Caller",
+      "category": "greeting",
+      "questions": ["Hey, what's up?"],
+      "expectedBehavior": "Professional but friendly response, guides conversation",
+      "expectedAnswers": ["Professional acknowledgment", "Offer assistance"],
+      "expectedDuration": 25
+    },
+    {
+      "id": "greeting-003",
+      "name": "Silent Caller",
+      "category": "greeting",
+      "questions": [],
+      "expectedBehavior": "AI prompts: 'Hello? Are you there? How can I help you?'",
+      "expectedAnswers": ["Prompting question", "Offer to help"],
+      "expectedDuration": 15
+    },
+    {
+      "id": "greeting-004",
+      "name": "Nervous Caller",
+      "category": "greeting",
+      "questions": ["Um, hi... I'm not sure if this is the right number..."],
+      "expectedBehavior": "Reassuring response, confirm they've reached the right place",
+      "expectedAnswers": ["Reassuring statement", "Confirmation of practice"],
+      "expectedDuration": 30
+    },
+    {
+      "id": "greeting-005",
+      "name": "Rushed Caller",
+      "category": "greeting",
+      "questions": ["Hi, I need to schedule something quickly, I'm in a hurry"],
+      "expectedBehavior": "Acknowledges urgency, offers to help efficiently",
+      "expectedAnswers": ["Acknowledgment of urgency", "Offer efficient help"],
+      "expectedDuration": 25
+    }
+  ]
+}
+

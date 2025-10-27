@@ -1,0 +1,96 @@
+{
+  "category": "appointment",
+  "scenarios": [
+    {
+      "id": "appt-001",
+      "name": "Schedule Consultation",
+      "category": "appointment",
+      "questions": ["I'd like to schedule a consultation for my daughter."],
+      "expectedBehavior": "Ask age, availability, mention free consultation, provide time slots",
+      "expectedAnswers": ["Age question", "Availability question", "Time slots offered"],
+      "expectedDuration": 60
+    },
+    {
+      "id": "appt-002",
+      "name": "Urgent Appointment",
+      "category": "appointment",
+      "questions": ["I need to see someone this week if possible."],
+      "expectedBehavior": "Check availability, offer earliest slots, explain urgency process",
+      "expectedAnswers": ["Availability check", "Earliest slots", "Urgency process"],
+      "expectedDuration": 45
+    },
+    {
+      "id": "appt-003",
+      "name": "Evening Appointment",
+      "category": "assistant",
+      "questions": ["Do you have any evening appointments? I work during the day."],
+      "expectedBehavior": "Mention evening hours, offer specific times",
+      "expectedAnswers": ["Evening hours mentioned", "Specific times offered"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "appt-004",
+      "name": "Saturday Appointment",
+      "category": "appointment",
+      "questions": ["Can I come in on Saturday?"],
+      "expectedBehavior": "Confirm Saturday hours, offer available times",
+      "expectedAnswers": ["Saturday hours confirmation", "Available times"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "appt-005",
+      "name": "Cancel Appointment",
+      "category": "appointment",
+      "questions": ["I need to cancel my appointment next Tuesday."],
+      "expectedBehavior": "Acknowledge cancellation, ask for rescheduling, mention policy",
+      "expectedAnswers": ["Cancellation acknowledgment", "Rescheduling offer", "Policy mention"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "appt-006",
+      "name": "Reschedule Appointment",
+      "category": "appointment",
+      "questions": ["Can I move my appointment to next week instead?"],
+      "expectedBehavior": "Help with rescheduling, check availability, confirm new time",
+      "expectedAnswers": ["Rescheduling help", "Availability check", "Confirmation"],
+      "expectedDuration": 45
+    },
+    {
+      "id": "appt-007",
+      "name": "Group Appointment",
+      "category": "appointment",
+      "questions": ["Can I schedule appointments for both my kids at the same time?"],
+      "expectedBehavior": "Try to accommodate, explain if not possible, offer alternatives",
+      "expectedAnswers": ["Accommodation attempt", "Alternative options"],
+      "expectedDuration": 50
+    },
+    {
+      "id": "appt-008",
+      "name": "Records Appointment",
+      "category": "appointment",
+      "questions": ["I need to schedule my records appointment."],
+      "expectedBehavior": "Explain records process, schedule appropriate time slot",
+      "expectedAnswers": ["Records process", "Time slot scheduling"],
+      "expectedDuration": 45
+    },
+    {
+      "id": "appt-009",
+      "name": "Adjustment Appointment",
+      "category": "appointment",
+      "questions": ["When is my next adjustment appointment?"],
+      "expectedBehavior": "Check schedule, explain typical adjustment frequency",
+      "expectedAnswers": ["Schedule check", "Adjustment frequency info"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "appt-010",
+      "name": "Virtual Consultation",
+      "category": "appointment",
+      "questions": ["Can I do a virtual consultation instead of coming in?"],
+      "expectedBehavior": "Explain virtual options, limitations, offer in-person benefits",
+      "expectedAnswers": ["Virtual options", "Limitations", "In-person benefits"],
+      "expectedDuration": 40
+    }
+  ]
+}
+

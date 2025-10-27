@@ -1,0 +1,78 @@
+{
+  "category": "insurance",
+  "scenarios": [
+    {
+      "id": "insurance-001",
+      "name": "Direct Cost Question",
+      "category": "insurance",
+      "questions": ["How much do braces cost?"],
+      "expectedBehavior": "Range ($3k-$7k), mention insurance, payment plans, consultation for exact quote",
+      "expectedAnswers": ["Cost range", "Insurance mention", "Payment plans", "Consultation offer"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "insurance-002",
+      "name": "Insurance Verification",
+      "category": "insurance",
+      "questions": ["I have Delta Dental insurance. Will you accept it?"],
+      "expectedBehavior": "Yes, we accept Delta, typical coverage 50-85%, offer to verify benefits",
+      "expectedAnswers": ["Insurance acceptance", "Coverage percentage", "Verification offer"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "insurance-003",
+      "name": "Payment Plan Inquiry",
+      "category": "insurance",
+      "questions": ["Do you offer payment plans? I can't pay everything upfront."],
+      "expectedBehavior": "Yes, flexible payment plans, 0% financing, CareCredit",
+      "expectedAnswers": ["Payment plans available", "Financing options", "CareCredit mention"],
+      "expectedDuration": 40
+    },
+    {
+      "id": "insurance-004",
+      "name": "Invisalign Cost",
+      "category": "insurance",
+      "questions": ["How much more expensive is Invisalign compared to braces?"],
+      "expectedBehavior": "Invisalign typically $4k-$8k, similar to ceramic braces",
+      "expectedAnswers": ["Invisalign cost range", "Comparison to braces"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "insurance-005",
+      "name": "Family Discount",
+      "category": "insurance",
+      "questions": ["I have three kids who need braces. Do you give family discounts?"],
+      "expectedBehavior": "Yes, family discounts available, explain percentage savings",
+      "expectedAnswers": ["Family discount available", "Percentage savings info"],
+      "expectedDuration": 35
+    },
+    {
+      "id": "insurance-006",
+      "name": "Upfront Payment Discount",
+      "category": "insurance",
+      "questions": ["If I pay everything upfront, do you give a discount?"],
+      "expectedBehavior": "Yes, 5-10% discount for upfront payment",
+      "expectedAnswers": ["Discount confirmation", "Percentage amount"],
+      "expectedDuration": 30
+    },
+    {
+      "id": "insurance-007",
+      "name": "FSA/HSA Question",
+      "category": "insurance",
+      "questions": ["Can I use my FSA account to pay for braces?"],
+      "expectedBehavior": "Yes, orthodontics eligible for FSA/HSA reimbursement",
+      "expectedAnswers": ["FSA/HSA eligibility", "Reimbursement info"],
+      "expectedDuration": 30
+    },
+    {
+      "id": "insurance-008",
+      "name": "CareCredit Inquiry",
+      "category": "insurance",
+      "questions": ["Do you accept CareCredit?"],
+      "expectedBehavior": "Yes, CareCredit accepted, mention promotional financing",
+      "expectedAnswers": ["CareCredit acceptance", "Financing details"],
+      "expectedDuration": 30
+    }
+  ]
+}
+
