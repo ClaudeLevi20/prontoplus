@@ -1,7 +1,14 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as configcat from 'configcat-node';
-import { FeatureFlags } from '@prontoplus/feature-flags';
+
+// Feature flag constants
+const FEATURE_FLAGS = {
+  INSURANCE_VERIFICATION: 'pronto_insurance_verificationboolean',
+  OUTBOUND_CALLING: 'pronto_outbound_callingBoolean',
+  DEMO_ENABLED: 'pronto_demo_enabledBoolean',
+  MAINTENANCE_MODE: 'pronto_maintenance_modeBoolean',
+} as const;
 
 @Injectable()
 export class ConfigCatService implements OnModuleInit {
@@ -45,7 +52,7 @@ export class ConfigCatService implements OnModuleInit {
     const flags: Record<string, boolean> = {};
     
     try {
-      for (const flagKey of Object.values(FeatureFlags)) {
+      for (const flagKey of Object.values(FEATURE_FLAGS)) {
         flags[flagKey] = await this.isFeatureEnabled(flagKey, false);
       }
     } catch (error) {
