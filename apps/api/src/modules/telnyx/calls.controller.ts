@@ -267,7 +267,12 @@ export class CallsController {
     @Query('endDate') endDate?: string,
   ): Promise<any> {
     try {
-      const dateRange = startDate && endDate ? {
+      // Filter out undefined/null strings and validate dates
+      const hasValidDates = startDate && endDate && 
+        startDate !== 'undefined' && endDate !== 'undefined' &&
+        startDate !== 'null' && endDate !== 'null';
+
+      const dateRange = hasValidDates ? {
         startDate: new Date(startDate),
         endDate: new Date(endDate),
       } : undefined;
