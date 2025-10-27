@@ -9,6 +9,7 @@ import {
   HttpStatus,
   Logger,
   NotFoundException,
+  Post,
 } from '@nestjs/common';
 import {
   ApiTags,
@@ -208,6 +209,65 @@ export class CallsController {
         throw error;
       }
       this.logger.error(`Error fetching call ${id}`, error);
+      throw error;
+    }
+  }
+
+  /**
+   * Create a demo call for testing
+   */
+  @Post('demo/call')
+  @HttpCode(HttpStatus.CREATED)
+  @ApiOperation({
+    summary: 'Create a demo call',
+    description: 'Creates a simulated call for testing the dashboard without requiring actual Telnyx webhooks.',
+  })
+  async createDemoCall(): Promise<any> {
+    try {
+      // Create a demo call
+      const demoCall = await this.prisma.call.create({
+        data: {
+          telnyxCallId: `demo-${Date.now()}`,
+          telnyxCallControlId: `demo-control-${Date.now()}`,
+          phoneNumber: '+15551234567',
+          callerName: 'Demo Caller',
+          direction: 'INBOUND',
+          status: 'COMPLETED',
+          callDuration: 180, // 3 minutes
+          startedAt: new Date(),
+          answeredAt: new Date(Date.now() + 3000),
+          endedAt: new Date(Date.now() + 180000),
+        },
+      });
+
+      // Create a demo lead with scoring
+      const demoLead = await this.leadsService.captureLeadFromCall(demoCall.id, '+15551234567');
+      
+      // Update lead with scoring data
+      await this.prisma.demoLead.update({
+        where: { id: demoLead.id },
+        data: {
+          name: 'John Doe',
+          email: 'john.doe@example.com',
+          interestLevel: 'HOT',
+          leadScore: 85,
+          leadQuality: 'HOT',
+          sentimentScore: 0.8,
+          questionsAsked: ['What does Invisalign cost?', 'Do you accept insurance?'],
+          mentionedPricing: true,
+          mentionedInsurance: true,
+          mentionedScheduling: true,
+          qualificationNotes: 'High-quality lead interested in Invisalign treatment',
+        },
+      });
+
+      return {
+        call: demoCall,
+        lead: demoLead,
+        message: 'Demo call created successfully',
+      };
+    } catch (error) {
+      this.logger.error('Error creating demo call', error);
       throw error;
     }
   }
