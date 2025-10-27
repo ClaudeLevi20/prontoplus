@@ -15,7 +15,7 @@ try {
     fs.mkdirSync(logDir, { recursive: true });
   }
 } catch (error) {
-  console.warn('Could not create logs directory:', error.message);
+  console.warn('Could not create logs directory:', error instanceof Error ? error.message : String(error));
 }
 
 export const loggerConfig = {
