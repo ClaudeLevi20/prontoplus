@@ -76,6 +76,12 @@ export class TelnyxWebhookController {
     try {
       const signature = headers['telnyx-signature'] || headers['x-telnyx-signature'];
       
+      // LOG: Confirm webhook is received
+      this.logger.log('=== WEBHOOK RECEIVED ===');
+      this.logger.log(`Event Type: ${payload?.meta?.event_type || 'unknown'}`);
+      this.logger.log(`Payload: ${JSON.stringify(payload, null, 2).substring(0, 500)}`);
+      this.logger.log(`Headers: ${JSON.stringify(Object.keys(headers))}`);
+      
       // Process webhook asynchronously to avoid timeouts
       setImmediate(async () => {
         try {
