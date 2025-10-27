@@ -133,10 +133,9 @@ export class TelnyxService {
       });
 
       // Capture lead from caller information
-      const lead = await this.leadsService.captureLeadFromCall(call.id, callData.from);
+      await this.leadsService.captureLeadFromCall(call.id, callData.from);
 
-      // Send Slack notification (will be sent after call completion with scoring)
-      // await this.notificationsService.sendLeadNotification(call, lead);
+      // Slack notification will be sent after call completion with scoring
 
       this.logger.log(`Call initiated: ${call.id} (${call.telnyxCallId})`);
     } catch (error) {
