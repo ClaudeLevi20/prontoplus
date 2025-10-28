@@ -42,15 +42,28 @@ export class OpenAIClient {
    * Download recording from URL and transcribe using Whisper API
    * 
    * @param recordingUrl - URL of the recording file
+   * @param twilioAccountSid - Twilio Account SID for authentication
+   * @param twilioAuthToken - Twilio Auth Token for authentication
    * @returns Promise<TranscriptionResult>
    */
-  async transcribeRecording(recordingUrl: string): Promise<TranscriptionResult> {
+  async transcribeRecording(
+    recordingUrl: string, 
+    twilioAccountSid?: string, 
+    twilioAuthToken?: string
+  ): Promise<TranscriptionResult> {
     try {
       console.log(`Downloading recording from: ${recordingUrl}`);
       
-      // Download the file
+      // Download the file with Twilio authentication if credentials provided
+      const headers: any = {};
+      if (twilioAccountSid && twilioAuthToken) {
+        const auth = Buffer.from(`${twilioAccountSid}:${twilioAuthToken}`).toString('base64');
+        headers['Authorization'] = `Basic ${auth}`;
+      }
+      
       const response = await axios.get(recordingUrl, {
         responseType: 'arraybuffer',
+        headers,
       });
       
       const audioBuffer = Buffer.from(response.data);

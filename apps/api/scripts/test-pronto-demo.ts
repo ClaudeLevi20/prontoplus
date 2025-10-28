@@ -8,12 +8,16 @@
  * and generates comprehensive performance reports.
  */
 
+import * as dotenv from 'dotenv';
 import * as fs from 'fs';
 import * as path from 'path';
 import { PrismaClient } from '@prisma/client';
 import { OpenAIClient } from './lib/openai-client';
-import { TelnyxHelper } from './lib/mcp-helpers';
+import { TwilioHelper } from './lib/twilio-helpers';
 import { ReportGenerator, TestResult as ReportTestResult } from './lib/report-generator';
+
+// Load environment variables
+dotenv.config({ path: path.join(__dirname, '../.env.local') });
 
 interface Scenario {
   id: string;
@@ -65,10 +69,10 @@ interface CallMetrics {
 
 interface TestConfig {
   prontoPhoneNumber: string;
-  telnyxApiKey: string;
+  twilioAccountSid: string;
+  twilioAuthToken: string;
+  twilioFromNumber: string;
   openaiApiKey: string;
-  telnyxCallControlAppId: string;
-  fromNumber: string;
   callDelaySeconds: number;
   scenarioFiles: string[];
 }
@@ -76,7 +80,7 @@ interface TestConfig {
 class TestRunner {
   private prisma: PrismaClient;
   private openaiClient: OpenAIClient;
-  private telnyxHelper: TelnyxHelper;
+  private twilioHelper: TwilioHelper;
   private reportGenerator: ReportGenerator;
   private config: TestConfig;
 
@@ -84,7 +88,7 @@ class TestRunner {
     this.config = config;
     this.prisma = new PrismaClient();
     this.openaiClient = new OpenAIClient(config.openaiApiKey);
-    this.telnyxHelper = new TelnyxHelper(config.telnyxApiKey);
+    this.twilioHelper = new TwilioHelper(config.twilioAccountSid, config.twilioAuthToken);
   }
 
   /**
@@ -93,6 +97,7 @@ class TestRunner {
   async runTests(testCategory?: string): Promise<void> {
     console.log('🚀 Starting Pronto Demo AI Receptionist Tests');
     console.log(`📞 Test Number: ${this.config.prontoPhoneNumber}`);
+    console.log(`📱 From Number (Twilio): ${this.config.twilioFromNumber}`);
     console.log(`⏱️  Delay between calls: ${this.config.callDelaySeconds}s\n`);
 
     // Load test scenarios
@@ -263,10 +268,9 @@ class TestRunner {
     const startTime = new Date();
 
     // Start the call
-    const callResult = await this.telnyxHelper.startCall(
+    const callResult = await this.twilioHelper.startCall(
       this.config.prontoPhoneNumber,
-      this.config.fromNumber,
-      this.config.telnyxCallControlAppId
+      this.config.twilioFromNumber
     );
 
     // For test calls, we'll let the AI assistant handle the conversation
@@ -275,14 +279,14 @@ class TestRunner {
 
     // Wait for call to complete
     console.log('  ⏳ Waiting for call to complete...');
-    const completed = await this.telnyxHelper.waitForCallCompletion(callResult.callId, 120);
+    const completed = await this.twilioHelper.waitForCallCompletion(callResult.callId, 120);
 
     if (!completed) {
       throw new Error('Call did not complete within timeout');
     }
 
     // Get call details
-    const callDetails = await this.telnyxHelper.getCallDetails(callResult.callId);
+    const callDetails = await this.twilioHelper.getCallDetails(callResult.callId);
     const endTime = new Date();
     const duration = Math.floor((endTime.getTime() - startTime.getTime()) / 1000);
 
@@ -408,10 +412,10 @@ async function main() {
   // Load environment variables
   const config: TestConfig = {
     prontoPhoneNumber: process.env.PRONTO_DEMO_PHONE_NUMBER || '',
-    telnyxApiKey: process.env.TELNYX_API_KEY || '',
+    twilioAccountSid: process.env.TWILIO_ACCOUNT_SID || '',
+    twilioAuthToken: process.env.TWILIO_AUTH_TOKEN || '',
+    twilioFromNumber: process.env.TWILIO_FROM_NUMBER || '',
     openaiApiKey: process.env.OPENAI_API_KEY || '',
-    telnyxCallControlAppId: process.env.TELNYX_CALL_CONTROL_APP_ID || '',
-    fromNumber: process.env.TELNYX_PHONE_NUMBER || '',
     callDelaySeconds: parseInt(process.env.TEST_CALL_DELAY_SECONDS || '45', 10),
     scenarioFiles: [
       'greeting-tests.json',
@@ -428,8 +432,16 @@ async function main() {
     console.error('Error: PRONTO_DEMO_PHONE_NUMBER environment variable is required');
     process.exit(1);
   }
-  if (!config.telnyxApiKey) {
-    console.error('Error: TELNYX_API_KEY environment variable is required');
+  if (!config.twilioAccountSid) {
+    console.error('Error: TWILIO_ACCOUNT_SID environment variable is required');
+    process.exit(1);
+  }
+  if (!config.twilioAuthToken) {
+    console.error('Error: TWILIO_AUTH_TOKEN environment variable is required');
+    process.exit(1);
+  }
+  if (!config.twilioFromNumber) {
+    console.error('Error: TWILIO_FROM_NUMBER environment variable is required');
     process.exit(1);
   }
   if (!config.openaiApiKey) {

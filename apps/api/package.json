@@ -29,7 +29,8 @@
     "logs:combined": "tail -f logs/combined-*.log",
     "logs:clear": "rm -f logs/*.log",
     "test:pronto": "ts-node scripts/test-pronto-demo.ts",
-    "test:pronto:category": "ts-node scripts/test-pronto-demo.ts --category"
+    "test:pronto:category": "ts-node scripts/test-pronto-demo.ts --category",
+    "test:single": "ts-node scripts/test-single-call.ts"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -41,19 +42,21 @@
     "@prisma/client": "^5.7.1",
     "@prontoplus/feature-flags": "workspace:*",
     "@slack/webhook": "^7.0.6",
-    "telnyx": "^2.0.0",
+    "axios": "^1.6.0",
+    "chart.js": "^4.4.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "configcat-node": "^11.4.1",
+    "dotenv": "^17.2.3",
     "ioredis": "^5.3.2",
     "nest-winston": "^1.9.4",
+    "openai": "^4.20.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
+    "telnyx": "^2.0.0",
+    "twilio": "^5.10.3",
     "winston": "^3.11.0",
-    "winston-daily-rotate-file": "^5.0.0",
-    "openai": "^4.20.0",
-    "chart.js": "^4.4.0",
-    "axios": "^1.6.0"
+    "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",

@@ -11,9 +11,10 @@ import { PracticesModule } from './modules/practices/practices.module';
 import { DemoModule } from './modules/demo/demo.module';
 import { TelnyxModule } from './modules/telnyx/telnyx.module';
 import { TestModule } from './modules/test/test.module';
+import { ConfigCatModule } from './config-cat/config-cat.module';
 import { loggerConfig } from './common/logger/logger.config';
 import { validate } from './config/env.validation';
-// Force deployment 2
+// Force deployment 3
 
 @Module({
   imports: [

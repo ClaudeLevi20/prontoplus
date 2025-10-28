@@ -48,7 +48,7 @@ export class TelnyxService {
         throw new BadRequestException('Invalid webhook signature');
       }
 
-      const eventType = payload.meta?.event_type;
+      const eventType = payload.data?.event_type;
       this.logger.log(`Processing Telnyx webhook event: ${eventType}`);
 
       switch (eventType) {
