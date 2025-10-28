@@ -12,7 +12,8 @@ import { DemoModule } from './modules/demo/demo.module';
 import { TelnyxModule } from './modules/telnyx/telnyx.module';
 import { TestModule } from './modules/test/test.module';
 import { loggerConfig } from './common/logger/logger.config';
-// Force deployment
+import { validate } from './config/env.validation';
+// Force deployment 2
 
 @Module({
   imports: [
